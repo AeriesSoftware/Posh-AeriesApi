@@ -9,7 +9,7 @@ function Get-AeriesStudentCollegeTest
 
         .EXAMPLE
         Get-AeriesStudentCollegeTest -SchoolCode 994 -StudentID 99400001
-        This will return all College Tests for the specific Student ID from Aeries
+        This will return all College Tests for the specific Student ID at the specified School Code from Aeries
     #>
 
     [CmdletBinding()]
