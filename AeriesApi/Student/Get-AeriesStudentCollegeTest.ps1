@@ -2,7 +2,7 @@ function Get-AeriesStudentCollegeTest
 {
     <#  
         .SYNOPSIS
-        Get Tests from Aeries
+        Get College Tests from Aeries
         
         .DESCRIPTION
         The Get-AeriesStudentCollegeTest cmdlet is used to retrieve College Tests for a specific Student from Aeries
