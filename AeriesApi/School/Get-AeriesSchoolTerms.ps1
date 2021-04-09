@@ -16,7 +16,7 @@ function Get-AeriesSchoolTerms
     param (
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
-        [int]
+        [Int16]
         $SchoolCode
     )
 

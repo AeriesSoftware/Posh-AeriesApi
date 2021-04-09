@@ -16,7 +16,7 @@ function Get-AeriesSchoolCalendar
     param (
         [ValidateRange(0, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
-        [int]
+        [Int16]
         $SchoolCode = 0
     )
 

@@ -20,7 +20,7 @@ function Get-AeriesContact
     param (
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
-        [int]
+        [Int16]
         $SchoolCode,
         [ValidateRange(1, [Int]::MaxValue)]
         [Parameter(Mandatory=$false)]

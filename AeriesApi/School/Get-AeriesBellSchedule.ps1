@@ -20,7 +20,7 @@ function Get-AeriesBellSchedule
     param (
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
-        [int]
+        [Int16]
         $SchoolCode,
         # Specific date to pull Bell Schedule for
         [Parameter(Mandatory=$false)]

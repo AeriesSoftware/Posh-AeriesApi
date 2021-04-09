@@ -20,7 +20,7 @@ function Get-AeriesAbsenceCode
     param (
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
-        [int]
+        [Int16]
         $SchoolCode,
         # Specific Absence Code to pull
         [Parameter(Mandatory=$false)]

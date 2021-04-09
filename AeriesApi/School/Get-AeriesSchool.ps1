@@ -19,7 +19,7 @@ function Get-AeriesSchool
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$false)]
-        [int]
+        [Int16]
         $SchoolCode = 0
     )
 
