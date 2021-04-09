@@ -8,7 +8,7 @@ function Get-AeriesStudentCollegeTest
         The Get-AeriesStudentCollegeTest cmdlet is used to retrieve College Tests for a specific Student from Aeries
 
         .EXAMPLE
-        Get-AeriesStudentCollegeTest -StudentID 99400001
+        Get-AeriesStudentCollegeTest -SchoolCode 994 -StudentID 99400001
         This will return all College Tests for the specific Student ID from Aeries
     #>
 
