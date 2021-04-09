@@ -47,7 +47,7 @@ function Get-AeriesAuthorization
         $Endpoint = "v5/schools/$SchoolCode/students/$StudentID"
 
         if ($Sequence -gt 0) {
-            $Endpoint =+ "/$Sequence"
+            $Endpoint += "/$Sequence"
         }
     }
 
