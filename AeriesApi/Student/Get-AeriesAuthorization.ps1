@@ -44,7 +44,7 @@ function Get-AeriesAuthorization
         # v5/schools/$SchoolCode/authorizations
         # is the same as
         # v5/schools/$SchoolCode/students/0/authorizations
-        $Endpoint = "v5/schools/$SchoolCode/students/$StudentID"
+        $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/authorizations"
 
         if ($Sequence -gt 0) {
             $Endpoint += "/$Sequence"
