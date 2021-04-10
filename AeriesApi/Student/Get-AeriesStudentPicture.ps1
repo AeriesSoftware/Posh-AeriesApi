@@ -42,10 +42,22 @@ function Get-AeriesStudentPicture
         $Method = "Get"
         $SuccessStatusCode = 200
         $Endpoint = "v5/schools/$SchoolCode/StudentPictures/$StudentID"
+
+        $QueryParameters = @{}
+        if ($StartingRecord -ge 1) {
+            $QueryParameters += @{
+                "StartingRecord" = $StartingRecord
+            }
+        }
+        if ($EndingRecord -ge 1) {
+            $QueryParameters += @{
+                "EndingRecord" = $EndingRecord
+            }
+        }
     }
 
     Process {
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
+        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -QueryParameters $QueryParameters)
     }
 
     End {
