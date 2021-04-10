@@ -11,7 +11,7 @@ $SchoolCode
 ### Student ID Parameter
 ```powershell
 [ValidateRange(1, [Int]::MaxValue)]
-[Parameter(Mandatory=$false)]
+[Parameter(Mandatory=$true)]
 [int]
 $StudentID
 ```
