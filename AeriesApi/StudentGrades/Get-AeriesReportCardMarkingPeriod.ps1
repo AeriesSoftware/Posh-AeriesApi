@@ -29,7 +29,7 @@ function Get-AeriesReportCardMarkingPeriod
     }
 
     Process {
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -QueryParameters $QueryParameters)
+        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
     }
 
     End {
