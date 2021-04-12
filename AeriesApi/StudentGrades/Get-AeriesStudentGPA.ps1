@@ -5,7 +5,7 @@ function Get-AeriesStudentGPA
         Get one or more Students GPAs from Aeries
         
         .DESCRIPTION
-        The Get-AeriesStudentGPA cmdlet is used to retrieve Programs for all or a specific Student from Aeries
+        The Get-AeriesStudentGPA cmdlet is used to retrieve GPAs for all or a specific Student from Aeries
 
         .EXAMPLE
         Get-AeriesStudentGPA -SchoolCode 994

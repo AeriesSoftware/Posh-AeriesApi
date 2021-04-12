@@ -2,14 +2,14 @@ function Get-AeriesReportCardMarkingPeriod
 {
     <#  
         .SYNOPSIS
-        Get one or more Students from Aeries
+        Get Report Card Marking Periods from Aeries
         
         .DESCRIPTION
-        The Get-AeriesReportCardMarkingPeriod cmdlet is used to retrieve Programs for all or a specific Student from Aeries
+        The Get-AeriesReportCardMarkingPeriod cmdlet is used to retrieve Repot Card Marking Periods for a specific School from Aeries
 
         .EXAMPLE
         Get-AeriesReportCardMarkingPeriod -SchoolCode 994
-        This will return all Student Report Cards from Aeries at School 994
+        This will return all Report Card Marking Periods from Aeries at School 994
     #>
 
     [CmdletBinding()]

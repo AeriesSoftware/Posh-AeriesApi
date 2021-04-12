@@ -2,10 +2,10 @@ function Get-AeriesStudentReportCard
 {
     <#  
         .SYNOPSIS
-        Get one or more Students Repot Cards from Aeries
+        Get one or more Students Report Cards from Aeries
         
         .DESCRIPTION
-        The Get-AeriesStudentReportCard cmdlet is used to retrieve Programs for all or a specific Student from Aeries
+        The Get-AeriesStudentReportCard cmdlet is used to retrieve Report Cards for all or a specific Student from Aeries
 
         .EXAMPLE
         Get-AeriesStudentReportCard -SchoolCode 994
