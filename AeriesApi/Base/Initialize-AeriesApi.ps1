@@ -23,6 +23,8 @@ function Initialize-AeriesApi
         [string]
         $Certificate,
         # The DatabaseYear to utilize
+        # If provided, must be 4 characters
+        [ValidateLength(4,4)]
         [Parameter(Mandatory=$false)]
         [string]
         $DatabaseYear
