@@ -25,7 +25,11 @@ function Get-AeriesStudentProgram
         [ValidateRange(1, [Int]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [int]
-        $StudentID
+        $StudentID,
+        # Program to limit results to
+        [Parameter(Mandatory=$false)]
+        [string]
+        $Code
     )
 
     Begin {
@@ -34,10 +38,17 @@ function Get-AeriesStudentProgram
         $Method = "Get"
         $SuccessStatusCode = 200
         $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/programs"
+
+        $QueryParameters = @{}
+        if ($Code -ge 1) {
+            $QueryParameters += @{
+                "code" = $Code
+            }
+        }
     }
 
     Process {
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
+        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -QueryParameters $QueryParameters)
     }
 
     End {
