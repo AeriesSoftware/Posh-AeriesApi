@@ -31,3 +31,11 @@ $Sequence
 [string]
 $Grade
 ```
+
+### 4 Character string (not limited to just DatabaseYear)
+```powershell
+[ValidateLength(4,4)]
+[Parameter(Mandatory=$false)]
+[string]
+$DatabaseYear
+```
