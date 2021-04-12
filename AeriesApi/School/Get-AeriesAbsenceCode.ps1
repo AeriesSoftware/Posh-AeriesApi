@@ -23,9 +23,10 @@ function Get-AeriesAbsenceCode
         [Int16]
         $SchoolCode,
         # Specific Absence Code to pull
+        [ValidateLength(1,1)]
         [Parameter(Mandatory=$false)]
         [string]
-        $AbsenceCode = ""
+        $AbsenceCode
     )
 
     Begin {
