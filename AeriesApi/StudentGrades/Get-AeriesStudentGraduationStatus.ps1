@@ -47,7 +47,7 @@ function Get-AeriesStudentGraduationStatus
         $SuccessStatusCode = 200
         $Endpoint = "v5/schools/$SchoolCode/GraduationStatusSummary"
 
-        if ($null -ne $Grade) {
+        if (![string]::IsNullOrWhiteSpace($Grade)) {
             $Endpoint += "/grade/$Grade"
         }
         else {
