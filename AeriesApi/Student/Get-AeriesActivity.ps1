@@ -38,9 +38,11 @@ function Get-AeriesActivity
         [Parameter(Mandatory=$false)]
         [int]
         $StudentID,
+        # Used to get Activity with a specific code
         [Parameter(Mandatory=$false)]
         [string]
         $Code,
+        # Used to get a specific Activity
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
