@@ -2,13 +2,13 @@ function Initialize-AeriesPreEnrollInactive
 {
     <#  
         .SYNOPSIS
-        Initialize a Pre-Enrollment for an Active Student
+        Initialize a Pre-Enrollment for an Inactive Student
         
         .DESCRIPTION
-        The Initialize-AeriesPreEnrollActive cmdlet is used to Initialize a Pre-Enrollment record for a given Student ID in Aeries
+        The Initialize-AeriesPreEnrollInactive cmdlet is used to Initialize a Pre-Enrollment record for a given Student ID in Aeries
 
         .EXAMPLE
-        Initialize-AeriesPreEnrollActive -SchoolCode 994 -StudentID 99400001
+        Initialize-AeriesPreEnrollInactive -SchoolCode 994 -StudentID 99400001
         This will initialize a Pre Enrollment for the given Student ID in Aeries
     #>
 
