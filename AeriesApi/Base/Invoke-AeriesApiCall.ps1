@@ -34,7 +34,11 @@ function Invoke-AeriesApiCall
         # URL Query Parameters to utilize
         [Parameter(Mandatory=$false)]
         [hashtable]
-        $QueryParameters
+        $QueryParameters,
+        # When this is used, DatabaseYear will be ignored on the request
+        [Parameter(Mandatory=$false)]
+        [switch]
+        $IgnoreDatabaseYear
     )
 
     Begin {
@@ -64,8 +68,9 @@ function Invoke-AeriesApiCall
         $RequestURL = "$($AeriesConfig.URL)/api/$Endpoint"
 
         # Begin Parameter processing
-        # Check if a DatabaseYear was configured. If so, add to parameters
-        if (![string]::IsNullOrWhiteSpace($AeriesConfig.DatabaseYear)) {
+        # Check if a DatabaseYear was configured
+        # If so, add to parameters except when asked to ignore
+        if (![string]::IsNullOrWhiteSpace($AeriesConfig.DatabaseYear) -and !$IgnoreDatabaseYear) {
             $QueryParameters += @{
                 "DatabaseYear" = $AeriesConfig.DatabaseYear
             }
