@@ -12,8 +12,24 @@ function Get-AeriesStudentEnrollmentHistory
         This will return all Student Enrollment Histories from Aeries
 
         .EXAMPLE
+        Get-AeriesStudentEnrollmentHistory -StudentID 99400001
+        This will return all Enrollment Histories from Aeries for Student ID 99400001
+
+        .EXAMPLE
+        Get-AeriesStudentEnrollmentHistory -StudentID 99400001 -AcademicYear 2020
+        This will return all Enrollment Histories from Aeries for Student ID 99400001 and Academic Year 2020-2021
+
+        .EXAMPLE
         Get-AeriesStudentEnrollmentHistory -SchoolCode 994
-        This will return the requested something from Aeries for School Code 994
+        This will return all Enrollment Histories from Aeries for School Code 994
+
+        .EXAMPLE
+        Get-AeriesStudentEnrollmentHistory -SchoolCode 994 -AcademicYear 2020
+        This will return all Enrollment Histories from Aeries for School Code 994 and Academic Year 2020-2021
+
+        .EXAMPLE
+        Get-AeriesStudentEnrollmentHistory -SchoolCode 994 -StudentID 99400001 -AcademicYear 2020
+        This will return all Enrollment Histories from Aeries for Student ID 99400001 at School Code 994 for Academic Year 2020
     #>
 
     [CmdletBinding()]
