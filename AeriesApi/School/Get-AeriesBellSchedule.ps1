@@ -36,7 +36,7 @@ function Get-AeriesBellSchedule
         $Endpoint = "v5/schools/$SchoolCode/BellSchedule"
 
         if ($Date -ne $null) {
-            $DateString = "$($Date.Year)-$($Date.Month)-$($Date.Day)"
+            $DateString = $Date.ToString("yyyy-MM-dd")
             $EncodedDate = [System.Web.HTTPUtility]::UrlEncode($DateString)
             $Endpoint += "/date/" + $EncodedDate
         }
