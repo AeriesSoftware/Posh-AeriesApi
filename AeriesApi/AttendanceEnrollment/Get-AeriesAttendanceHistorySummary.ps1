@@ -44,7 +44,7 @@ function Get-AeriesAttendanceHistorySummary
         $SuccessStatusCode = 200
         $Endpoint = "v5/schools/$SchoolCode/AttendanceHistory/summary"
 
-        if (![string]::IsNullOrWhiteSpace($StartYear)) {
+        if ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
         else {
