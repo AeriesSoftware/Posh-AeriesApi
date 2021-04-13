@@ -1,22 +1,22 @@
-function Get-AeriesStudentAttendanceHistory
+function Get-AeriesAttendanceHistorySummary
 {
     <#  
         .SYNOPSIS
         Get Attendace from Aeries
         
         .DESCRIPTION
-        The Get-AeriesStudentAttendanceHistory cmdlet is used to retrieve a specific or all of Student Attendance Histories from Aeries
+        The Get-AeriesAttendanceHistorySummary cmdlet is used to retrieve a specific or all of Student Attendance Histories from Aeries
 
         .EXAMPLE
-        Get-AeriesStudentAttendanceHistory -SchoolCode 994
+        Get-AeriesAttendanceHistorySummary -SchoolCode 994
         This will return all Attendace Histories from Aeries for School Code 994
 
         .EXAMPLE
-        Get-AeriesStudentAttendanceHistory -SchoolCode 994 -StudentID 99400001
+        Get-AeriesAttendanceHistorySummary -SchoolCode 994 -StudentID 99400001
         This will return all Attendance Histories from Aeries for Student ID 99400001
 
         .EXAMPLE
-        Get-AeriesStudentAttendanceHistory -SchoolCode 994 -StartYear 2020
+        Get-AeriesAttendanceHistorySummary -SchoolCode 994 -StartYear 2020
         This will return all Attendance Histories from Aeries for Academic Year 2020-2021 at School Code 994
     #>
 
