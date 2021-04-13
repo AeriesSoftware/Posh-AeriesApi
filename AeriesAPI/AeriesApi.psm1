@@ -1,4 +1,4 @@
-$ModuleFiles = @( Get-ChildItem -Path "$PSScriptRoot\AeriesApi\*.ps1" -ErrorAction SilentlyContinue -Recurse -Exclude "*template*")
+$ModuleFiles = @( Get-ChildItem -Path "$PSScriptRoot\Methods\*.ps1" -ErrorAction SilentlyContinue -Recurse -Exclude "*template*")
 
 foreach ($File in $ModuleFiles) {
     try {
