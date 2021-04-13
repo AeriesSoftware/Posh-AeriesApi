@@ -23,7 +23,7 @@ function Get-AeriesStudentAttendance
     [CmdletBinding()]
     param (
         [ValidateRange(1, [Int16]::MaxValue)]
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory=$true)]
         [Int16]
         $SchoolCode,
         [ValidateRange(1, [Int]::MaxValue)]
