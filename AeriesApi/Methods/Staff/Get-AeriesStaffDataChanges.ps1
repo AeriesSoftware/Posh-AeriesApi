@@ -9,7 +9,7 @@ function Get-AeriesStaffDataChanges
 
         .EXAMPLE
         Get-AeriesStaffDataChanges -DateTime (Get-Date "2021-04-09 9:00AM")
-        This will return the requested something from Aeries
+        This will return Staff Data Changes as of the given Date Time from Aeries
     #>
 
     [CmdletBinding()]
