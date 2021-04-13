@@ -2,7 +2,7 @@ function Get-AeriesGradebook
 {
     <#  
         .SYNOPSIS
-        Get something from Aeries
+        Get Gradebook from Aeries
         
         .DESCRIPTION
         The Get-AeriesGradebook cmdlet is used to retrieve a specific or all Gradebooks from Aeries
