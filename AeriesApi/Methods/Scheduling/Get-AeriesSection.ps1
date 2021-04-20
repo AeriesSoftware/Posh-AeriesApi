@@ -33,7 +33,11 @@ function Get-AeriesSection
 
         $Method = "Get"
         $SuccessStatusCode = 200
-        $Endpoint = "v5/schools/$SchoolCode/sections/$SectionNumber"
+        $Endpoint = "v5/schools/$SchoolCode/sections"
+
+        if ($SectionNumber -gt 0) {
+            $Endpoint =+ "/$SectionNumber"
+        }
     }
 
     Process {
