@@ -12,6 +12,9 @@ function Test-AeriesApiConnection
         This will perform a web request against the configured Aeries Instance
     #>
 
+    [CmdletBinding()]
+    param ()
+    
     Begin {
         Write-Verbose -Message "Begin testing Aeries Api connection"
     }

@@ -12,6 +12,9 @@ function Get-AeriesSystemInfo
         This will return the System Info for Aeries
     #>
 
+    [CmdletBinding()]
+    param ()
+    
     Begin {
         Write-Verbose -Message "Begin running $($MyInvocation.MyCommand)"
 
