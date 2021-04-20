@@ -2,18 +2,18 @@ function Get-AeriesCourseInformation
 {
     <#  
         .SYNOPSIS
-        Get Student Class Schedules from Aeries
+        Get Course Information from Aeries
         
         .DESCRIPTION
-        The Get-AeriesCourseInformation cmdlet is used to retrieve a filtered set or all Student Class Schedules from Aeries
+        The Get-AeriesCourseInformation cmdlet is used to retrieve a filtered set or all Course Information from Aeries
 
         .EXAMPLE
         Get-AeriesCourseInformation
-        This will return all Student Class Schedules for School Code 994 from Aeries
+        This will return all Course Information for School Code 994 from Aeries
 
         .EXAMPLE
         Get-AeriesCourseInformation -CourseID "100"
-        This will return the Student Class Schedules for Student ID 99400001 from School Code 994 from Aeries
+        This will return the Course Information for Student ID 99400001 from School Code 994 from Aeries
     #>
 
     [CmdletBinding()]
