@@ -17,7 +17,7 @@ function Get-AeriesCourseRequest
 
         .EXAMPLE
         Get-AeriesCourseRequest -SchoolCode 994 -StudentID 99400002 -Sequence 5
-        This will return the Course Request Sequence 2 for Student ID 99400002 from School Code 994 from Aeries
+        This will return the Course Request Sequence 5 for Student ID 99400002 from School Code 994 from Aeries
 
         .EXAMPLE
         Get-AeriesCourseRequest -SchoolCode 994 -StudentNumber 2
@@ -25,7 +25,7 @@ function Get-AeriesCourseRequest
 
         .EXAMPLE
         Get-AeriesCourseRequest -SchoolCode 994 -StudentNumber 2 -Sequence 5
-        This will return the Course Request Sequence 2 for Student Number 2 from School Code 994 from Aeries
+        This will return the Course Request Sequence 5 for Student Number 2 from School Code 994 from Aeries
     #>
 
     [CmdletBinding()]
