@@ -14,14 +14,10 @@ function Test-AeriesApiConnection
 
     Begin {
         Write-Verbose -Message "Begin testing Aeries Api connection"
-
-        $Method = "Get"
-        $SuccessStatusCode = 200
-        $Endpoint = "v5/systeminfo"
     }
 
     Process {
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
+        $Result = (Get-AeriesSystemInfo)
     }
 
     End {
