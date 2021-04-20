@@ -42,7 +42,6 @@ function Invoke-AeriesApiCall
     )
 
     Begin {
-        $ApiError = $null
         Write-Verbose -Message "Begin calling $Endpoint"
 
         # Required in order to communicate to Aeries
@@ -98,34 +97,29 @@ function Invoke-AeriesApiCall
             else {
                 $ApiResult = (Invoke-WebRequest -Uri $RequestURL -Method $Method -Headers $Headers -UserAgent $UserAgent)
             }
+            $StatusCode = $ApiResult.StatusCode
+            $ResponseBody = $ApiResult.Content
         }
         catch {
-            # End block will run even when an exception is thrown
-            # So store the error then re-throw it
-            $ApiError = $Error[0]
-            Throw
+            $StatusCode = $_.Exception.Response.StatusCode.value__
+            $ResponseBody = $_.ErrorDetails.Message
         }
     }
 
     End {
         Write-Verbose -Message "Finish calling $Endpoint"
 
-        # If there was an error, the call for this method should handle it
-        # so just cancel here for now, unless otherwise thought of
-        if ($null -ne $ApiError) {
-            return
-        }
-        elseif ($ApiResult.StatusCode -eq $SuccessStatusCode) {
+        if ($StatusCode -eq $SuccessStatusCode) {
             # If the request was a success, return the Content as a JSON object
-            return ($ApiResult.Content | ConvertFrom-Json)
+            return ($ResponseBody | ConvertFrom-Json)
         }
-        elseif ($ApiResult.StatusCode -ge 400) {
-            # If the Status Code is 400 or greater, there is a message attached to the error from Aeries
-            Throw "Error calling $Endpoint : $(($ApiResult.Content | ConvertFrom-Json).Message)"
+        elseif ($StatusCode -in (400,404)) {
+            # There is a message attached to the error from Aeries
+            Throw "Error calling $Endpoint : $(($ResponseBody | ConvertFrom-Json).Message)"
         }
         else {
-            Write-Verbose -Message "Error: $($ApiResult.Content)"
-            Throw "Status code `"$($ApiResult.StatusCode)`" does not indicate success for $Endpoint"
+            Write-Verbose -Message "Error: $($ResponseBody)"
+            Throw "Status code `"$($StatusCode)`" does not indicate success for $Endpoint`r`n$ResponseBody"
         }
     }
 }
