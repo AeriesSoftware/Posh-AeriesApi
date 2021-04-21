@@ -10,7 +10,7 @@ This project will also standardize ways to utilize the Aeries Api for any type o
 1.	Install the module with `Install-Module -Name Posh-AeriesApi`
 2.	Dependencies include PowerShell 5.1+ or PowerShell Core 7.1.3+
 3.	Utilize the module by putting `Import-Module -Name AeriesApi` at the top of the script file(s)
-4.	Check out the `Examples` folder to see how to get started!
+4.	Check out the [Examples](examples) folder to see how to get started!
 
 # Build and Test
 This module has been tested on both PowerShell 5.1 as well as PowerShell Core 7.1.3
