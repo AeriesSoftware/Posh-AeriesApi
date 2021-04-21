@@ -50,7 +50,7 @@ function Invoke-AeriesApiCall
         Add-Type -AssemblyName System.Web
 
         # Retrieve config and ensure things are set properly
-        $AeriesConfig = $Global:AeriesApiConfig
+        $AeriesConfig = $Script:AeriesApiConfig
         if (
             [string]::IsNullOrWhiteSpace($AeriesConfig.URL) -or
             [string]::IsNullOrWhiteSpace($AeriesConfig.Certificate)
