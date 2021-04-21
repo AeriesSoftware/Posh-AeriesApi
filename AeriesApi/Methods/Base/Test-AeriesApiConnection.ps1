@@ -12,6 +12,7 @@ function Test-AeriesApiConnection
         This will perform a web request against the configured Aeries Instance
     #>
 
+    [OutputType([bool])]
     [CmdletBinding()]
     param ()
     
