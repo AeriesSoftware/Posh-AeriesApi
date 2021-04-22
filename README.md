@@ -1,6 +1,10 @@
-# README GETTING STARTED IS CURRENTLY INACCURATE DUE TO PACKAGE NOT PUBLISHED
-# WILL BE CORRECTED WHEN FULL PROJECT NAME IS KNOWN AND PACKAGE IS PUBLISHED
+# WARNING
+* README GETTING STARTED IS CURRENTLY INACCURATE DUE TO PACKAGE NOT PUBLISHED
+* WILL BE CORRECTED WHEN FULL PROJECT NAME IS KNOWN AND PACKAGE IS PUBLISHED
 
+# AeriesApi PowerShell Module
+#### Aeries(R) SIS is a registered trademark of Aeries Software, Inc.
+Any reference to **Aeries**, **Aeries SIS** or **Aeries API** within this project, repository or any associated documentation ALL are referring to the **Aeries Software, Inc. trademarked software Aeries (R) SIS**
 
 # Introduction 
 AeriesApi PowerShell Module is meant to simplify integrations utilizing the Aeries Api rather than requiring SQL scripts to be maintained.
