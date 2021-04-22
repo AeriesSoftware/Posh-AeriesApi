@@ -125,7 +125,7 @@ function Invoke-AeriesApiCall
             # If the request was a success, return the Content as a JSON object
             return ($ResponseBody | ConvertFrom-Json)
         }
-        elseif ($StatusCode -in (400,404)) {
+        elseif ($StatusCode -in (400,401,402,403,404)) {
             # There is a message attached to the error from Aeries
             Throw "Error calling $Endpoint : $(($ResponseBody | ConvertFrom-Json).Message)"
         }
