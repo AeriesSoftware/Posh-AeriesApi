@@ -121,11 +121,19 @@ function Invoke-AeriesApiCall
     End {
         Write-Verbose -Message "Finish calling $Endpoint"
 
+        # Used to store codes that should be parsed for an error message
+        # and returned slightly different
+        $ParseErrorCodes  = @()
+        $ParseErrorCodes += 400 # Bad Request
+        $ParseErrorCodes += 401 # Unauthorized
+        $ParseErrorCodes += 403 # Forbidden
+        $ParseErrorCodes += 404 # Not Found
+
         if ($StatusCode -eq $SuccessStatusCode) {
             # If the request was a success, return the Content as a JSON object
             return ($ResponseBody | ConvertFrom-Json)
         }
-        elseif ($StatusCode -in (400,401,403,404)) {
+        elseif ($StatusCode -in $ParseErrorCodes) {
             # There is a message attached to the error from Aeries
             Throw "Error calling $Endpoint : $(($ResponseBody | ConvertFrom-Json).Message)"
         }
