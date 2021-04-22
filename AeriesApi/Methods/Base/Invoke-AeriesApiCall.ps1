@@ -90,17 +90,29 @@ function Invoke-AeriesApiCall
 
     Process {
         try {
+            # Assemble the parameters for easy maintaining and clean code reading
+            $FunctionParameters = @{
+                Uri = $RequestURL;
+                Method = $Method;
+                Headers = $Headers;
+                UserAgent = $UserAgent;
+            }
+
             # Sending a body when it's not Put or Post doesn't work for Invoke-WebRequest
             if (@("Put","Post") -contains $Method) {
-                $ApiResult = (Invoke-WebRequest -Uri $RequestURL -Method $Method -Headers $Headers -UserAgent $UserAgent -Body $Body)
+                # Assign the body
+                $FunctionParameters.Body = $Body
             }
-            else {
-                $ApiResult = (Invoke-WebRequest -Uri $RequestURL -Method $Method -Headers $Headers -UserAgent $UserAgent)
-            }
+
+            # Run the Web Request
+            $ApiResult = (Invoke-WebRequest @FunctionParameters)
+
+            # Store the Status and Content
             $StatusCode = $ApiResult.StatusCode
             $ResponseBody = $ApiResult.Content
         }
         catch {
+            # There was an error, retrieve the info from it
             $StatusCode = $_.Exception.Response.StatusCode.value__
             $ResponseBody = $_.ErrorDetails.Message
         }
