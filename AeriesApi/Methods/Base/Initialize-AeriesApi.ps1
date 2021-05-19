@@ -27,21 +27,26 @@ function Initialize-AeriesApi
         [ValidateLength(4,4)]
         [Parameter(Mandatory=$false)]
         [string]
-        $DatabaseYear
+        $DatabaseYear,
+        # User Agent to use for Requests
+        [Parameter(Mandatory=$false)]
+        [string]
+        $UserAgent = "PowerShell AeriesApi Module"
     )
 
     Begin {
         Write-Verbose -Message "Begin initializing Aeries API and storing config"
 
         $AeriesConfig = [PSCustomObject]@{
-            URL = $URL
+            URL = $URL.Trim("/") # Remove trailing slash if it is present
             Certificate = $Certificate
             DatabaseYear = $DatabaseYear
+            UserAgent = $UserAgent
         }
         Set-Variable -Name "AeriesApiConfig" -Scope "Script" -Value $AeriesConfig
 
         $ObfuscatedCertificate = $AeriesConfig.Certificate.Substring(0,5) + ("x" * ($AeriesApiConfig.Certificate.length - 5))
-        Write-Verbose -Message "Set URL to: $URL, Certificate to $ObfuscatedCertificate, DatabaseYear to $DatabaseYear"
+        Write-Verbose -Message "Set URL to: $URL, Certificate to $ObfuscatedCertificate, DatabaseYear to `"$DatabaseYear`""
     }
 
     Process {
