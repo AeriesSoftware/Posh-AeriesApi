@@ -63,15 +63,15 @@ function Invoke-AeriesApiCall
         }
 
         # Basic variables to be used when sending the request
-        $UserAgent = "PowerShell AeriesApi Module"
-        $RequestURL = "$($AeriesConfig.URL)/api/$Endpoint"
+        $BaseURL = $AeriesConfig.URL.Trim("/")
+        $RequestURL = "$BaseURL/api/$Endpoint"
 
         # Begin Parameter processing
         # Check if a DatabaseYear was configured
         # If so, add to parameters except when asked to ignore
         if (![string]::IsNullOrWhiteSpace($AeriesConfig.DatabaseYear) -and !$IgnoreDatabaseYear) {
             $QueryParameters += @{
-                "DatabaseYear" = $AeriesConfig.DatabaseYear
+                "DatabaseYear" = $AeriesConfig.DatabaseYear.Trim()
             }
         }
 
@@ -95,7 +95,8 @@ function Invoke-AeriesApiCall
                 Uri = $RequestURL;
                 Method = $Method;
                 Headers = $Headers;
-                UserAgent = $UserAgent;
+                UserAgent = $AeriesConfig.UserAgent;
+                UseBasicParsing = $true;
             }
 
             # Sending a body when it's not Put or Post doesn't work for Invoke-WebRequest
