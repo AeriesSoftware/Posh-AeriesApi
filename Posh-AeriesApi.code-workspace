@@ -4,18 +4,9 @@
 			"path": "."
 		}
 	],
-	"settings": {
-		"licenser.license": "Custom",
-		"licenser.author": "Aeries Software",
-		"licenser.projectName": "Aeries Api PowerShell Module",
-		"licenser.customHeader": "@PROJECT@\nCopyright @YEAR@ @AUTHOR@\nThis is my header...",
-		"licenser.disableAutoHeaderInsertion": true,
-		"licenser.useSingleLineStyle": false
-	},
 	"extensions": {
 		"recommendations": [
-			"ms-vscode.powershell",
-			"ymotongpoo.licenser"
+			"ms-vscode.powershell"
 		]
 	}
 }
