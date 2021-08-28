@@ -39,6 +39,7 @@ function Invoke-AeriesApiCall
         [Parameter(Mandatory=$false)]
         [switch]
         $IgnoreDatabaseYear,
+        # Set the ContentType for a request (only used for PUT/POST)
         [Parameter(Mandatory=$false)]
         [string]
         $ContentType = "application/json"
