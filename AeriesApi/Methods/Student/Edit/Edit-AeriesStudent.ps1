@@ -2,10 +2,10 @@ function Edit-AeriesStudent
 {
     <#  
         .SYNOPSIS
-        Add a new Student in Aeries
+        Edit a Student in Aeries
         
         .DESCRIPTION
-        The Edit-AeriesStudent cmdlet is used to edit a Student for a specific School in Aeries
+        The Edit-AeriesStudent cmdlet is used to edit a Student in Aeries
         No fields are technically required other than StudentID, but you can update as many as you'd like in one call
 
         .EXAMPLE
