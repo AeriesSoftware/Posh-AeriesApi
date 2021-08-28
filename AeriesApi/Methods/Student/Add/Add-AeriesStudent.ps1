@@ -10,7 +10,7 @@ function Add-AeriesStudent
 
         .EXAMPLE
         Add-AeriesStudent -SchoolCode 994 -FirstName "Aeries" -LastName "Software"
-        This will add a student to  for the specific Student ID from Aeries
+        This will add a student to for the specific School Code in Aeries
     #>
 
     [CmdletBinding()]
