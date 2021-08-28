@@ -38,7 +38,11 @@ function Invoke-AeriesApiCall
         # When this is used, DatabaseYear will be ignored on the request
         [Parameter(Mandatory=$false)]
         [switch]
-        $IgnoreDatabaseYear
+        $IgnoreDatabaseYear,
+        # Set the ContentType for a request (only used for PUT/POST)
+        [Parameter(Mandatory=$false)]
+        [string]
+        $ContentType = "application/json"
     )
 
     Begin {
@@ -101,6 +105,9 @@ function Invoke-AeriesApiCall
 
             # Sending a body when it's not Put or Post doesn't work for Invoke-WebRequest
             if (@("Put","Post") -contains $Method) {
+                # Set the Content-Type of the body
+                $Headers.Add("Content-Type", $ContentType)
+
                 # Assign the body
                 $FunctionParameters.Body = $Body
             }
