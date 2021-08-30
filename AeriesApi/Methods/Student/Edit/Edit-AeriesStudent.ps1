@@ -129,7 +129,6 @@ function Edit-AeriesStudent
         [Int16]
         $ResidenceSchool,
 
-
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
