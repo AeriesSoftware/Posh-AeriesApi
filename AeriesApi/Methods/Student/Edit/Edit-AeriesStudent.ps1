@@ -58,7 +58,7 @@ function Edit-AeriesStudent
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $NextSchool,
+        $NextSchool = -1,
 
         [Parameter(Mandatory=$false)]
         [datetime]
@@ -122,17 +122,17 @@ function Edit-AeriesStudent
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $LastSchool,
+        $LastSchool = -1,
 
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $ResidenceSchool,
+        $ResidenceSchool = -1,
 
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $NextResidenceSchool,
+        $NextResidenceSchool = -1,
 
         [Parameter(Mandatory=$false)]
         [datetime]
@@ -332,324 +332,324 @@ function Edit-AeriesStudent
         $SuccessStatusCode = 200
         $Endpoint = "v5/UpdateStudent/$StudentID"
         $ContentType = "application/json"
-        $StudentData = @{}
+        $Body = @{}
     }
 
     Process {
         If (![string]::IsNullOrWhiteSpace($LastName)) {
             <# String value #>
-            $StudentData.LastName = $LastName
+            $Body.LastName = $LastName
         }
         
         If (![string]::IsNullOrWhiteSpace($FirstName)) {
             <# String value #>
-            $StudentData.FirstName = $FirstName
+            $Body.FirstName = $FirstName
         }
         
         If (![string]::IsNullOrWhiteSpace($MiddleName)) {
             <# String value #>
-            $StudentData.MiddleName = $MiddleName
+            $Body.MiddleName = $MiddleName
         }
         
         If (![string]::IsNullOrWhiteSpace($NameSuffix)) {
             <# String value #>
-            $StudentData.NameSuffix = $NameSuffix
+            $Body.NameSuffix = $NameSuffix
         }
         
         If (![string]::IsNullOrWhiteSpace($Gender)) {
             <# String value #>
-            $StudentData.Gender = $Gender
+            $Body.Gender = $Gender
         }
         
         If (![string]::IsNullOrWhiteSpace($Grade)) {
             <# String value #>
-            $StudentData.Grade = $Grade
+            $Body.Grade = $Grade
         }
         
         If (![string]::IsNullOrWhiteSpace($NextGrade)) {
             <# String value #>
-            $StudentData.NextGrade = $NextGrade
+            $Body.NextGrade = $NextGrade
         }
         
-        If (![string]::IsNullOrWhiteSpace($NextSchool) -and ($NextSchool -gt 0)) {
+        If (![string]::IsNullOrWhiteSpace($NextSchool) -and ($NextSchool -gt -1)) {
             <# String value #>
-            $StudentData.NextSchool = $NextSchool
+            $Body.NextSchool = $NextSchool
         }
         
         If (![string]::IsNullOrWhiteSpace($BirthDate)) {
             <# Datetime value #>
-            $StudentData.BirthDate = $BirthDate.ToString("yyyy-MM-dd")
+            $Body.BirthDate = $BirthDate.ToString("yyyy-MM-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($InactiveStatusCode)) {
             <# String value #>
-            $StudentData.InactiveStatusCode = $InactiveStatusCode
+            $Body.InactiveStatusCode = $InactiveStatusCode
         }
         
         If (![string]::IsNullOrWhiteSpace($HomePhone)) {
             <# String value #>
-            $StudentData.HomePhone = $HomePhone
+            $Body.HomePhone = $HomePhone
         }
         
         If (![string]::IsNullOrWhiteSpace($HomeLanguageCode)) {
             <# String value #>
-            $StudentData.HomeLanguageCode = $HomeLanguageCode
+            $Body.HomeLanguageCode = $HomeLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($CorrespondanceLanguageCode)) {
             <# String value #>
-            $StudentData.CorrespondanceLanguageCode = $CorrespondanceLanguageCode
+            $Body.CorrespondanceLanguageCode = $CorrespondanceLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($LanguageFluencyCode)) {
             <# String value #>
-            $StudentData.LanguageFluencyCode = $LanguageFluencyCode
+            $Body.LanguageFluencyCode = $LanguageFluencyCode
         }
         
         If (![string]::IsNullOrWhiteSpace($EthnicityCode)) {
             <# String value #>
-            $StudentData.EthnicityCode = $EthnicityCode
+            $Body.EthnicityCode = $EthnicityCode
         }
         
         If (![string]::IsNullOrWhiteSpace($Race1Code)) {
             <# String value #>
-            $StudentData.Race1Code = $Race1Code
+            $Body.Race1Code = $Race1Code
         }
         
         If (![string]::IsNullOrWhiteSpace($Race2Code)) {
             <# String value #>
-            $StudentData.Race2Code = $Race2Code
+            $Body.Race2Code = $Race2Code
         }
         
         If (![string]::IsNullOrWhiteSpace($Race3Code)) {
             <# String value #>
-            $StudentData.Race3Code = $Race3Code
+            $Body.Race3Code = $Race3Code
         }
         
         If (![string]::IsNullOrWhiteSpace($Race4Code)) {
             <# String value #>
-            $StudentData.Race4Code = $Race4Code
+            $Body.Race4Code = $Race4Code
         }
         
         If (![string]::IsNullOrWhiteSpace($Race5Code)) {
             <# String value #>
-            $StudentData.Race5Code = $Race5Code
+            $Body.Race5Code = $Race5Code
         }
         
-        If (![string]::IsNullOrWhiteSpace($LastSchool) -and ($LastSchool -gt 0)) {
+        If (![string]::IsNullOrWhiteSpace($LastSchool) -and ($LastSchool -gt -1)) {
             <# String value #>
-            $StudentData.LastSchool = $LastSchool
+            $Body.LastSchool = $LastSchool
         }
         
-        If (![string]::IsNullOrWhiteSpace($ResidenceSchool) -and ($ResidenceSchool -gt 0)) {
+        If (![string]::IsNullOrWhiteSpace($ResidenceSchool) -and ($ResidenceSchool -gt -1)) {
             <# String value #>
-            $StudentData.ResidenceSchool = $ResidenceSchool
+            $Body.ResidenceSchool = $ResidenceSchool
         }
         
-        If (![string]::IsNullOrWhiteSpace($NextResidenceSchool) -and ($NextResidenceSchool -gt 0)) {
+        If (![string]::IsNullOrWhiteSpace($NextResidenceSchool) -and ($NextResidenceSchool -gt -1)) {
             <# String value #>
-            $StudentData.NextResidenceSchool = $NextResidenceSchool
+            $Body.NextResidenceSchool = $NextResidenceSchool
         }
         
         If (![string]::IsNullOrWhiteSpace($SchoolEnterDate)) {
             <# String value #>
-            $StudentData.SchoolEnterDate = $SchoolEnterDate.ToString("yyyy-MM-dd")
+            $Body.SchoolEnterDate = $SchoolEnterDate.ToString("yyyy-MM-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($DistrictEnterDate)) {
             <# String value #>
-            $StudentData.DistrictEnterDate = $DistrictEnterDate.ToString("yyyy-MM-dd")
+            $Body.DistrictEnterDate = $DistrictEnterDate.ToString("yyyy-MM-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($BirthCity)) {
             <# String value #>
-            $StudentData.BirthCity = $BirthCity
+            $Body.BirthCity = $BirthCity
         }
         
         If (![string]::IsNullOrWhiteSpace($BirthStateCode)) {
             <# String value #>
-            $StudentData.BirthStateCode = $BirthStateCode
+            $Body.BirthStateCode = $BirthStateCode
         }
         
         If (![string]::IsNullOrWhiteSpace($BirthCountryCode)) {
             <# String value #>
-            $StudentData.BirthCountryCode = $BirthCountryCode
+            $Body.BirthCountryCode = $BirthCountryCode
         }
         
         If (![string]::IsNullOrWhiteSpace($ParentEdLevelCode)) {
             <# String value #>
-            $StudentData.ParentEdLevelCode = $ParentEdLevelCode
+            $Body.ParentEdLevelCode = $ParentEdLevelCode
         }
         
         If (![string]::IsNullOrWhiteSpace($ParentGuardianName)) {
             <# String value #>
-            $StudentData.ParentGuardianName = $ParentGuardianName
+            $Body.ParentGuardianName = $ParentGuardianName
         }
         
         If (![string]::IsNullOrWhiteSpace($MailingAddress)) {
             <# String value #>
-            $StudentData.MailingAddress = $MailingAddress
+            $Body.MailingAddress = $MailingAddress
         }
         
         If (![string]::IsNullOrWhiteSpace($MailingAddressCity)) {
             <# String value #>
-            $StudentData.MailingAddressCity = $MailingAddressCity
+            $Body.MailingAddressCity = $MailingAddressCity
         }
         
         If (![string]::IsNullOrWhiteSpace($MailingAddressState)) {
             <# String value #>
-            $StudentData.MailingAddressState = $MailingAddressState
+            $Body.MailingAddressState = $MailingAddressState
         }
         
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipCode)) {
             <# String value #>
-            $StudentData.MailingAddressZipCode = $MailingAddressZipCode
+            $Body.MailingAddressZipCode = $MailingAddressZipCode
         }
         
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipExt)) {
             <# String value #>
-            $StudentData.MailingAddressZipExt = $MailingAddressZipExt
+            $Body.MailingAddressZipExt = $MailingAddressZipExt
         }
         
         If (![string]::IsNullOrWhiteSpace($ResidenceAddress)) {
             <# String value #>
-            $StudentData.ResidenceAddress = $ResidenceAddress
+            $Body.ResidenceAddress = $ResidenceAddress
         }
         
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressCity)) {
             <# String value #>
-            $StudentData.ResidenceAddressCity = $ResidenceAddressCity
+            $Body.ResidenceAddressCity = $ResidenceAddressCity
         }
         
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressState)) {
             <# String value #>
-            $StudentData.ResidenceAddressState = $ResidenceAddressState
+            $Body.ResidenceAddressState = $ResidenceAddressState
         }
         
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipCode)) {
             <# String value #>
-            $StudentData.ResidenceAddressZipCode = $ResidenceAddressZipCode
+            $Body.ResidenceAddressZipCode = $ResidenceAddressZipCode
         }
         
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipExt)) {
             <# String value #>
-            $StudentData.ResidenceAddressZipExt = $ResidenceAddressZipExt
+            $Body.ResidenceAddressZipExt = $ResidenceAddressZipExt
         }
         
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyFirstLanguageCode)) {
             <# String value #>
-            $StudentData.HomeLanguageSurveyFirstLanguageCode = $HomeLanguageSurveyFirstLanguageCode
+            $Body.HomeLanguageSurveyFirstLanguageCode = $HomeLanguageSurveyFirstLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyPrimaryLanguageCode)) {
             <# String value #>
-            $StudentData.HomeLanguageSurveyPrimaryLanguageCode = $HomeLanguageSurveyPrimaryLanguageCode
+            $Body.HomeLanguageSurveyPrimaryLanguageCode = $HomeLanguageSurveyPrimaryLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyHomeLanguageCode)) {
             <# String value #>
-            $StudentData.HomeLanguageSurveyHomeLanguageCode = $HomeLanguageSurveyHomeLanguageCode
+            $Body.HomeLanguageSurveyHomeLanguageCode = $HomeLanguageSurveyHomeLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyAdultLanguageCode)) {
             <# String value #>
-            $StudentData.HomeLanguageSurveyAdultLanguageCode = $HomeLanguageSurveyAdultLanguageCode
+            $Body.HomeLanguageSurveyAdultLanguageCode = $HomeLanguageSurveyAdultLanguageCode
         }
         
         If (![string]::IsNullOrWhiteSpace($USEnterDate)) {
             <# Datetime value #>
-            $StudentData.USEnterDate = $USEnterDate.ToString("yyyy-MM-dd")
+            $Body.USEnterDate = $USEnterDate.ToString("yyyy-MM-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($USSchoolEnterDate)) {
             <# Datetime value #>
-            $StudentData.USSchoolEnterDate = $USSchoolEnterDate.ToString("yyyy-mm-dd")
+            $Body.USSchoolEnterDate = $USSchoolEnterDate.ToString("yyyy-mm-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode1)) {
             <# String value #>
-            $StudentData.UserCode1 = $UserCode1
+            $Body.UserCode1 = $UserCode1
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode2)) {
             <# String value #>
-            $StudentData.UserCode2 = $UserCode2
+            $Body.UserCode2 = $UserCode2
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode3)) {
             <# String value #>
-            $StudentData.UserCode3 = $UserCode3
+            $Body.UserCode3 = $UserCode3
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode4)) {
             <# String value #>
-            $StudentData.UserCode4 = $UserCode4
+            $Body.UserCode4 = $UserCode4
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode5)) {
             <# String value #>
-            $StudentData.UserCode5 = $UserCode5
+            $Body.UserCode5 = $UserCode5
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode6)) {
             <# String value #>
-            $StudentData.UserCode6 = $UserCode6
+            $Body.UserCode6 = $UserCode6
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode7)) {
             <# String value #>
-            $StudentData.UserCode7 = $UserCode7
+            $Body.UserCode7 = $UserCode7
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode8)) {
             <# String value #>
-            $StudentData.UserCode8 = $UserCode8
+            $Body.UserCode8 = $UserCode8
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode9)) {
             <# String value #>
-            $StudentData.UserCode9 = $UserCode9
+            $Body.UserCode9 = $UserCode9
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode10)) {
             <# String value #>
-            $StudentData.UserCode10 = $UserCode10
+            $Body.UserCode10 = $UserCode10
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode11)) {
             <# String value #>
-            $StudentData.UserCode11 = $UserCode11
+            $Body.UserCode11 = $UserCode11
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode12)) {
             <# String value #>
-            $StudentData.UserCode12 = $UserCode12
+            $Body.UserCode12 = $UserCode12
         }
         
         If (![string]::IsNullOrWhiteSpace($UserCode13)) {
             <# String value #>
-            $StudentData.UserCode13 = $UserCode13
+            $Body.UserCode13 = $UserCode13
         }
         
         If (![string]::IsNullOrWhiteSpace($WellbeingDate)) {
             <# Datetime value #>
-            $StudentData.WellbeingDate = $WellbeingDate.ToString("yyyy-mm-dd")
+            $Body.WellbeingDate = $WellbeingDate.ToString("yyyy-mm-dd")
         }
         
         If (![string]::IsNullOrWhiteSpace($WellbeingScore)) {
             <# String value #>
-            $StudentData.WellbeingScore = $WellbeingScore
+            $Body.WellbeingScore = $WellbeingScore
         }
         
         If (![string]::IsNullOrWhiteSpace($WellbeingAttentionCode)) {
             <# String value #>
-            $StudentData.WellbeingAttentionCode = $WellbeingAttentionCode
+            $Body.WellbeingAttentionCode = $WellbeingAttentionCode
         }
 
-        <# Turn the $StudentData variable into a JSON string for sending to the server #>
-        $Body = ($StudentData | ConvertTo-Json -Compress)
+        <# Turn the $Body variable into a JSON string for sending to the server #>
+        $BodyJSON = ($Body | ConvertTo-Json -Compress)
 
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -Body $Body -ContentType $ContentType)
+        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -Body $BodyJSON -ContentType $ContentType)
     }
 
     End {
