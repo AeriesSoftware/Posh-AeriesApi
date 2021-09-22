@@ -9,7 +9,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'AeriesApi.psm1'
 
 # Version number of this module.
 ModuleVersion = '1.0'
@@ -24,16 +24,16 @@ GUID = 'b02ccbed-a832-4468-af8d-a495c9441310'
 Author = 'Brandon Usher'
 
 # Company or vendor of this module
-CompanyName = 'Aeries Software'
+CompanyName = 'Aeries Software, Inc.'
 
 # Copyright statement for this module
-Copyright = '(c) Aeries Software. All rights reserved.'
+Copyright = '(c) Aeries Software, Inc. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = ''
 
 # Minimum version of the PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '5.1'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
@@ -69,7 +69,70 @@ Copyright = '(c) Aeries Software. All rights reserved.'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = '*'
+FunctionsToExport = @(
+    'Add-AeriesStudent',
+    'Edit-AeriesAddress',
+    'Edit-AeriesStudent',
+    'Get-AeriesAbsenceCode',
+    'Get-AeriesActivity',
+    'Get-AeriesAlternateCourseRequest',
+    'Get-AeriesAssertiveDiscipline',
+    'Get-AeriesAttendanceHistoryCodes',
+    'Get-AeriesAttendanceHistoryDetail',
+    'Get-AeriesAttendanceHistorySummary',
+    'Get-AeriesAuthorization',
+    'Get-AeriesBellSchedule',
+    'Get-AeriesClassCalendar',
+    'Get-AeriesCodeSet',
+    'Get-AeriesContact',
+    'Get-AeriesCourseDataChanges',
+    'Get-AeriesCourseInformation',
+    'Get-AeriesCourseRequest',
+    'Get-AeriesDistrictSupplemental',
+    'Get-AeriesFee',
+    'Get-AeriesFlexPeriod',
+    'Get-AeriesGradebook',
+    'Get-AeriesGradebookAssignment',
+    'Get-AeriesGradebookAssignmentScore',
+    'Get-AeriesGradebookFinalMarks',
+    'Get-AeriesGradebookStudent',
+    'Get-AeriesGraduationRequirement',
+    'Get-AeriesReportCardMarkingPeriod',
+    'Get-AeriesSchedulingSection',
+    'Get-AeriesSchool',
+    'Get-AeriesSchoolCalendar',
+    'Get-AeriesSchoolSupplemental',
+    'Get-AeriesSchoolTerms',
+    'Get-AeriesSection',
+    'Get-AeriesSectionDataChanges',
+    'Get-AeriesSectionRoster',
+    'Get-AeriesSectionRosterDataChanges',
+    'Get-AeriesStaff',
+    'Get-AeriesStaffAssignment',
+    'Get-AeriesStaffClass',
+    'Get-AeriesStaffDataChanges',
+    'Get-AeriesStudent',
+    'Get-AeriesStudentAttendance',
+    'Get-AeriesStudentClassSchedule',
+    'Get-AeriesStudentCollegeTest',
+    'Get-AeriesStudentDataChanges',
+    'Get-AeriesStudentEnrollmentHistory',
+    'Get-AeriesStudentExtended',
+    'Get-AeriesStudentGPA',
+    'Get-AeriesStudentGraduationStatus',
+    'Get-AeriesStudentGroup',
+    'Get-AeriesStudentPicture',
+    'Get-AeriesStudentProgram',
+    'Get-AeriesStudentReportCard',
+    'Get-AeriesStudentTest',
+    'Get-AeriesStudentTranscript',
+    'Get-AeriesSystemInfo',
+    'Get-AeriesTeacher',
+    'Initialize-AeriesApi',
+    'Initialize-AeriesPreEnrollActive',
+    'Initialize-AeriesPreEnrollInactive',
+    'Test-AeriesApiConnection'
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
