@@ -1,6 +1,7 @@
-$ModuleFiles = @( Get-ChildItem -Path "$PSScriptRoot\Methods\*.ps1" -ErrorAction SilentlyContinue -Recurse -Exclude "*template*")
+$Public = @( Get-ChildItem -Path "$PSScriptRoot\Public\*.ps1" -ErrorAction SilentlyContinue -Exclude "*template*")
+$Private = @( Get-ChildItem -Path "$PSScriptRoot\Private\*.ps1" -ErrorAction SilentlyContinue -Exclude "*template*")
 
-foreach ($File in $ModuleFiles) {
+foreach ($File in @($Public + $Private)) {
     try {
         . $File.FullName
     }
@@ -9,4 +10,4 @@ foreach ($File in $ModuleFiles) {
     }
 }
 
-Export-ModuleMember -Function $ModuleFiles.Basename -Alias *
+Export-ModuleMember -Function $Public.Basename -Alias *
