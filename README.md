@@ -18,7 +18,7 @@ This project will also standardize ways to utilize the Aeries Api for any type o
 
 # Build and Test
 This module has been tested on both PowerShell 5.1 as well as PowerShell Core 7.1.3
-The build process is practically non-existent, simply import the [AeriesApi.psm1](AeriesApi\AeriesApi.psm1) file with `Import-Module -Name ".\AeriesApi\AeriesApi.psm1" -Force`
+The build process is practically non-existent, simply import the [AeriesApi.psm1](AeriesApi/AeriesApi.psm1) file with `Import-Module -Name ".\AeriesApi\AeriesApi.psm1" -Force`
 
 # Contribute
 Contributions are happily welcome and will undergo testing before being committed into the main branch.
