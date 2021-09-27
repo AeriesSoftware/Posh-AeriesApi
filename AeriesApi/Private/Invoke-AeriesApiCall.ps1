@@ -77,7 +77,7 @@ function Invoke-AeriesApiCall
             $QueryParameters += @{
                 "DatabaseYear" = $AeriesConfig.DatabaseYear.Trim()
             }
-}
+        }
 
         $QueryStringObject = [System.Web.HttpUtility]::ParseQueryString([string]::Empty)
         # Go through and process Parameters into TempParameters
@@ -85,8 +85,8 @@ function Invoke-AeriesApiCall
             foreach ($Key in $QueryParameters.Keys) {
                 $QueryStringObject.Add($Key, $QueryParameters[$Key])
             }
-}
-# If there are items in the object, add them as a query string
+        }
+        # If there are items in the object, add them as a query string
         if ($QueryStringObject.Count -ge 1) {
             $RequestURL += ("?" + $QueryStringObject.ToString())
         }
@@ -119,7 +119,7 @@ function Invoke-AeriesApiCall
             $StatusCode = $ApiResult.StatusCode
             $ResponseBody = $ApiResult.Content
         }
-catch {
+        catch {
             # There was an error, retrieve the info from it
             $StatusCode = $_.Exception.Response.StatusCode.value__
             $ResponseBody = $_.ErrorDetails.Message
@@ -141,11 +141,11 @@ catch {
             # If the request was a success, return the Content as a JSON object
             return ($ResponseBody | ConvertFrom-Json)
         }
-elseif ($StatusCode -in $ParseErrorCodes) {
+        elseif ($StatusCode -in $ParseErrorCodes) {
             # There is a message attached to the error from Aeries
             Throw "Error calling $Endpoint : $(($ResponseBody | ConvertFrom-Json).Message)"
         }
-else {
+        else {
             Write-Verbose -Message "Error: $($ResponseBody)"
             Throw "Status code `"$($StatusCode)`" does not indicate success for $Endpoint`r`n$ResponseBody"
         }

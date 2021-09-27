@@ -58,10 +58,10 @@ function Get-AeriesCourseRequest
         if ($StudentID -gt 0) {
             $Endpoint += "/students/$StudentID/courserequests/$Sequence"
         }
-elseif ($StudentNumber -gt 0) {
+        elseif ($StudentNumber -gt 0) {
             $Endpoint += "/students/sn/$StudentNumber/courserequests/$Sequence"
         }
-else {
+        else {
             $Endpoint += "/scheduling/courserequests"
         }
     }

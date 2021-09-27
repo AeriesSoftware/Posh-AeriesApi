@@ -43,7 +43,7 @@ function Initialize-AeriesApi
             DatabaseYear = $DatabaseYear
             UserAgent = $UserAgent
         }
-Set-Variable -Name "AeriesApiConfig" -Scope "Script" -Value $AeriesConfig
+        Set-Variable -Name "AeriesApiConfig" -Scope "Script" -Value $AeriesConfig
 
         $ObfuscatedCertificate = $AeriesConfig.Certificate.Substring(0,5) + ("x" * ($AeriesApiConfig.Certificate.length - 5))
         Write-Verbose -Message "Set URL to: $URL, Certificate to $ObfuscatedCertificate, DatabaseYear to `"$DatabaseYear`""

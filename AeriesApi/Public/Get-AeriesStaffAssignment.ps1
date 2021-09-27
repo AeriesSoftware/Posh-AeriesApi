@@ -52,10 +52,10 @@ function Get-AeriesStaffAssignment
         if ($Date -ne $null) {
             $Endpoint += "/date/" + $Date.ToString("yyyy/MM/dd") + "/$AssignmentType"
         }
-elseif (![string]::IsNullOrWhiteSpace($AssignmentType) -and ($Sequence -gt 0)) {
+        elseif (![string]::IsNullOrWhiteSpace($AssignmentType) -and ($Sequence -gt 0)) {
             $Endpoint += "/$AssignmentType/$Sequence"
         }
-else {
+        else {
             $Endpoint += "/$AssignmentType"
         }
     }

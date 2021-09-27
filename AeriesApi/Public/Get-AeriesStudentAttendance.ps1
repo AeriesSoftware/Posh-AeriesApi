@@ -48,16 +48,16 @@ function Get-AeriesStudentAttendance
         $Endpoint = "v5/schools/$SchoolCode/attendance/$StudentID"
 
         $QueryParameters = @{}
-if ($StartDate -ne $null) {
+        if ($StartDate -ne $null) {
             $QueryParameters += @{
                 "StartDate" = $StartDate.ToString("yyyyMMdd")
             }
-}
-if ($EndDate -ge 1) {
+        }
+        if ($EndDate -ge 1) {
             $QueryParameters += @{
                 "EndDate" = $EndDate.ToString("yyyyMMdd")
             }
-}
+        }
     }
 
     Process {

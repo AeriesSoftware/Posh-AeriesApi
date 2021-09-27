@@ -48,11 +48,11 @@ function Get-AeriesTeacher
             if ($TeacherNumber -ge 0) {
                 $Endpoint += "/$TeacherNumber"
             }
-}
-elseif ($StaffID -gt 0) {
+        }
+        elseif ($StaffID -gt 0) {
             $Endpoint += "/staff/$StaffID/teachers"
         }
-else {
+        else {
             Throw "SchoolCode or StaffID are required"
         }
     }

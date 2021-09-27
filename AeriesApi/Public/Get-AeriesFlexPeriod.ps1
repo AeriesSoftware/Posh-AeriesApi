@@ -47,7 +47,7 @@ function Get-AeriesFlexPeriod
         if ($Sequence -gt 0) {
             $Endpoint += "/$Sequence"
         }
-elseif ($StartYear -gt 0) {
+        elseif ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
     }

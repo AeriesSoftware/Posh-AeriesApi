@@ -53,10 +53,10 @@ function Get-AeriesGradebookAssignmentScore
         if (![string]::IsNullOrWhiteSpace($AssignmentUniqueID)) {
             $Endpoint += "/Assignments/$AssignmentUniqueID/scores/$StudentID"
         }
-elseif (($GradebookNumber -gt 0) -and ($AssignmentNumber -gt 0)) {
+        elseif (($GradebookNumber -gt 0) -and ($AssignmentNumber -gt 0)) {
             $Endpoint += "/$GradebookNumber/assignments/$AssignmentNumber/scores/$StudentID"
         }
-else {
+        else {
             Throw "Must provide at least AssignmentUniqueID or GradebookNumber and Assignment Number"
         }
     }

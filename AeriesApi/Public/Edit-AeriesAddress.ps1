@@ -148,7 +148,7 @@ function Edit-AeriesAddress
                 <# Only send Effect Start Date on Change and not Correction #>
                 $Body.EffectiveStartDate = $EffectiveStartDate.ToString("yyyy-MM-dd")
             }
-}
+        }
 
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)

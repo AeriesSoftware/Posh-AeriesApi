@@ -50,13 +50,13 @@ function Get-AeriesGradebook
         if ($GradebookNumber -gt 0) {
             $Endpoint += "/gradebooks/$GradebookNumber"
         }
-elseif ($StaffID -gt 0) {
+        elseif ($StaffID -gt 0) {
             $Endpoint += "/staff/$StaffID/gradebooks"
         }
-elseif (($SchoolCode -gt 0) -and ($SectionNumber -gt 0)) {
+        elseif (($SchoolCode -gt 0) -and ($SectionNumber -gt 0)) {
             $Endpoint += "/schools/$SchoolCode/sections/$SectionNumber/gradebooks"
         }
-else {
+        else {
             Throw "Must provide GradebookNumber, StaffID or a SchoolCode and SectionNumber"
         }
     }

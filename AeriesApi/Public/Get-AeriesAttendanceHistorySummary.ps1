@@ -47,7 +47,7 @@ function Get-AeriesAttendanceHistorySummary
         if ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
-else {
+        else {
             $Endpoint += "/$StudentID"
         }
     }

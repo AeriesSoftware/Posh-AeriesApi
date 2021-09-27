@@ -30,6 +30,6 @@ function Test-AeriesApiConnection
             Write-Verbose -Message "Server running Aeries Version $($Result.AeriesVersion)"
             return $true
         }
-return $false
+        return $false
     }
 }

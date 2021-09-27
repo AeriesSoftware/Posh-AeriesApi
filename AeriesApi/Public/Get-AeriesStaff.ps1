@@ -45,7 +45,7 @@ function Get-AeriesStaff
         if ($StaffID -gt 0) {
             $Endpoint += "/$StaffID"
         }
-elseif (![string]::IsNullOrWhiteSpace($HRID)) {
+        elseif (![string]::IsNullOrWhiteSpace($HRID)) {
             $Endpoint += "/hrid/$HRID"
         }
     }

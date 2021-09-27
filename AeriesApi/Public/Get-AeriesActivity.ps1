@@ -60,19 +60,19 @@ function Get-AeriesActivity
             # Student ID and Sequence were provided
             $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/activities/$Sequence"
         }
-elseif (($StudentID -gt 0) -and (![string]::IsNullOrWhiteSpace($Code))) {
+        elseif (($StudentID -gt 0) -and (![string]::IsNullOrWhiteSpace($Code))) {
             # Student ID and Code were provided
             $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/activities/code/$Code"
         }
-elseif ($StudentID -gt 0) {
+        elseif ($StudentID -gt 0) {
             # Student ID was provided
             $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/activities"
         }
-elseif (![string]::IsNullOrWhiteSpace($Code)) {
+        elseif (![string]::IsNullOrWhiteSpace($Code)) {
             # Code provided
             $Endpoint = "v5/schools/$SchoolCode/activities/code/$Code"
         }
-else {
+        else {
             # Nothing was provided, so get for entire School
             $Endpoint = "v5/schools/$SchoolCode/activities"
         }

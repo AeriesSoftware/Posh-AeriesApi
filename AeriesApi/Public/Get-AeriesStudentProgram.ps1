@@ -40,11 +40,11 @@ function Get-AeriesStudentProgram
         $Endpoint = "v5/schools/$SchoolCode/students/$StudentID/programs"
 
         $QueryParameters = @{}
-if ($Code -ge 1) {
+        if ($Code -ge 1) {
             $QueryParameters += @{
                 "code" = $Code
             }
-}
+        }
     }
 
     Process {

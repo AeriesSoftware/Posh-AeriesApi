@@ -50,21 +50,21 @@ function Get-AeriesStudentGraduationStatus
         if (![string]::IsNullOrWhiteSpace($Grade)) {
             $Endpoint += "/grade/$Grade"
         }
-else {
+        else {
             $Endpoint += "/$StudentID"
         }
 
         $QueryParameters = @{}
-if ($StartingRecord -ge 1) {
+        if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-}
-if ($EndingRecord -ge 1) {
+        }
+        if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-}
+        }
     }
 
     Process {

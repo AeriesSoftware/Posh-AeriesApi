@@ -55,10 +55,10 @@ function Get-AeriesClassCalendar
         if ($GetDates -and ($Sequence -gt 0)) {
             $Endpoint += "/$Sequence/dates"
         }
-elseif ($Sequence -gt 0) {
+        elseif ($Sequence -gt 0) {
             $Endpoint += "/$Sequence"
         }
-elseif ($StartYear -gt 0) {
+        elseif ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
     }
