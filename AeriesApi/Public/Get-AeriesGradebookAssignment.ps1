@@ -1,9 +1,9 @@
 function Get-AeriesGradebookAssignment
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Gradebook Assignments from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesGradebookAssignment cmdlet is used to retrieve a specific or all Gradebook Assignments from Aeries
 
@@ -45,10 +45,10 @@ function Get-AeriesGradebookAssignment
         if (![string]::IsNullOrWhiteSpace($AssignmentUniqueID)) {
             $Endpoint += "/Assignments/$AssignmentUniqueID"
         }
-        elseif ($GradebookNumber -gt 0) {
+elseif ($GradebookNumber -gt 0) {
             $Endpoint += "/$GradebookNumber/assignments/$AssignmentNumber"
         }
-        else {
+else {
             Throw "Must provide at least AssignmentUniqueID or GradebookNumber"
         }
     }

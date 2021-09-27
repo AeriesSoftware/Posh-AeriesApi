@@ -1,9 +1,9 @@
 function Get-AeriesStaffDataChanges
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Staff Data Changes from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStaffDataChanges cmdlet is used to retrieve all Staff Data Changes from Aeries since a given date
 

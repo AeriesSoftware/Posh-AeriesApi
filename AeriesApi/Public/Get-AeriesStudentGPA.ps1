@@ -1,9 +1,9 @@
 function Get-AeriesStudentGPA
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or more Students GPAs from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentGPA cmdlet is used to retrieve GPAs for all or a specific Student from Aeries
 
@@ -44,16 +44,16 @@ function Get-AeriesStudentGPA
         $Endpoint = "v5/schools/$SchoolCode/gpas/$StudentId"
 
         $QueryParameters = @{}
-        if ($StartingRecord -ge 1) {
+if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-        }
-        if ($EndingRecord -ge 1) {
+}
+if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-        }
+}
     }
 
     Process {

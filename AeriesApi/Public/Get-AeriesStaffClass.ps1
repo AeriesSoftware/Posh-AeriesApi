@@ -1,9 +1,9 @@
 function Get-AeriesStaffClass
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Staff Classes/Sections from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStaffClass cmdlet is used to retrieve a filtered set or all Staff Classes/Sections from Aeries
 

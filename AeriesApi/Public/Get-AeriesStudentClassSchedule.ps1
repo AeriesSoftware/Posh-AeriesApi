@@ -1,9 +1,9 @@
 function Get-AeriesStudentClassSchedule
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Student Class Schedules from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentClassSchedule cmdlet is used to retrieve a filtered set or all Student Class Schedules from Aeries
 

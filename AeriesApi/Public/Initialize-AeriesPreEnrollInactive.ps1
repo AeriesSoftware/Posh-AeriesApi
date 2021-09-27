@@ -1,9 +1,9 @@
 function Initialize-AeriesPreEnrollInactive
 {
-    <#  
+    <#
         .SYNOPSIS
         Initialize a Pre-Enrollment for an Inactive Student
-        
+
         .DESCRIPTION
         The Initialize-AeriesPreEnrollInactive cmdlet is used to Initialize a Pre-Enrollment record for a given Student ID in Aeries
 

@@ -1,9 +1,9 @@
 function Get-AeriesTeacher
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Teacher record from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesTeacher cmdlet is used to retrieve one or all Teacher records per School Code from Aeries
 
@@ -48,11 +48,11 @@ function Get-AeriesTeacher
             if ($TeacherNumber -ge 0) {
                 $Endpoint += "/$TeacherNumber"
             }
-        }
-        elseif ($StaffID -gt 0) {
+}
+elseif ($StaffID -gt 0) {
             $Endpoint += "/staff/$StaffID/teachers"
         }
-        else {
+else {
             Throw "SchoolCode or StaffID are required"
         }
     }

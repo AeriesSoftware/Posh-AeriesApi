@@ -1,9 +1,9 @@
 function Get-AeriesStudentPicture
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Student Picture from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentPicture cmdlet is used to retrieve Student Picture for all or a specific Student from Aeries
 
@@ -44,16 +44,16 @@ function Get-AeriesStudentPicture
         $Endpoint = "v5/schools/$SchoolCode/StudentPictures/$StudentID"
 
         $QueryParameters = @{}
-        if ($StartingRecord -ge 1) {
+if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-        }
-        if ($EndingRecord -ge 1) {
+}
+if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-        }
+}
     }
 
     Process {

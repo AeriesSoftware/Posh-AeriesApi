@@ -1,9 +1,9 @@
 function Get-AeriesGraduationRequirement
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Graduation Requirements from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesGraduationRequirement cmdlet is used to retrieve Graduation Requirements for a specific School from Aeries
 

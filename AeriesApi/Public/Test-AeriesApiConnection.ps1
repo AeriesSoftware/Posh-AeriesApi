@@ -1,9 +1,9 @@
 function Test-AeriesApiConnection
 {
-    <#  
+    <#
         .SYNOPSIS
         Test the connection for Aeries API calls
-        
+
         .DESCRIPTION
         The Test-AeriesApiConnection cmdlet is used to test the Aeries API connection
 
@@ -15,7 +15,7 @@ function Test-AeriesApiConnection
     [CmdletBinding()]
     [OutputType([bool])]
     param ()
-    
+
     Begin {
         Write-Verbose -Message "Begin testing Aeries Api connection"
     }
@@ -30,6 +30,6 @@ function Test-AeriesApiConnection
             Write-Verbose -Message "Server running Aeries Version $($Result.AeriesVersion)"
             return $true
         }
-        return $false
+return $false
     }
 }

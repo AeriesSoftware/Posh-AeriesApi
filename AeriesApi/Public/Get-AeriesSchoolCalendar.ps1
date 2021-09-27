@@ -1,9 +1,9 @@
 function Get-AeriesSchoolCalendar
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Terms from Aeries for a specific School
-        
+
         .DESCRIPTION
         The Get-AeriesSchoolCalendar cmdlet is used to retrieve a specific schools terms from Aeries
 

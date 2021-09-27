@@ -1,9 +1,9 @@
 function Get-AeriesStudentTest
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Tests from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentTest cmdlet is used to retrieve Tests for a specific Student from Aeries
 

@@ -1,9 +1,9 @@
 function Get-AeriesSchoolTerms
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Terms from Aeries for a specific School
-        
+
         .DESCRIPTION
         The Get-AeriesSchoolTerms cmdlet is used to retrieve a specific schools terms from Aeries
 

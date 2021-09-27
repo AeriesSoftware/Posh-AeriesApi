@@ -1,9 +1,9 @@
 function Get-AeriesContact
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Contacts from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesContact cmdlet is used to retrieve Contacts for all or a specific Student from Aeries
 

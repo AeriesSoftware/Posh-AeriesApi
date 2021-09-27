@@ -1,9 +1,9 @@
 function Get-AeriesCodeSet
 {
-    <#  
+    <#
         .SYNOPSIS
         Get a Code Set from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesCodeSet cmdlet is used to retrieve the Code Set for a specific Table and Field from Aeries
 

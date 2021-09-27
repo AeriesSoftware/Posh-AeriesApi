@@ -1,9 +1,9 @@
 function Get-AeriesGradebookAssignmentScore
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Gradebook Assignment Scores from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesGradebookAssignmentScore cmdlet is used to retrieve a specific or all Gradebook Assignment Scores from Aeries
 
@@ -53,10 +53,10 @@ function Get-AeriesGradebookAssignmentScore
         if (![string]::IsNullOrWhiteSpace($AssignmentUniqueID)) {
             $Endpoint += "/Assignments/$AssignmentUniqueID/scores/$StudentID"
         }
-        elseif (($GradebookNumber -gt 0) -and ($AssignmentNumber -gt 0)) {
+elseif (($GradebookNumber -gt 0) -and ($AssignmentNumber -gt 0)) {
             $Endpoint += "/$GradebookNumber/assignments/$AssignmentNumber/scores/$StudentID"
         }
-        else {
+else {
             Throw "Must provide at least AssignmentUniqueID or GradebookNumber and Assignment Number"
         }
     }

@@ -1,9 +1,9 @@
 function Get-AeriesCourseInformation
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Course Information from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesCourseInformation cmdlet is used to retrieve a filtered set or all Course Information from Aeries
 

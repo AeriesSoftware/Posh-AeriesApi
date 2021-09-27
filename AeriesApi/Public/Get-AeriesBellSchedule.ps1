@@ -1,9 +1,9 @@
 function Get-AeriesBellSchedule
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Bell Schedules from Aeries for a specific School
-        
+
         .DESCRIPTION
         The Get-AeriesBellSchedule cmdlet is used to retrieve Bell Schedules from a specific School from Aeries
 

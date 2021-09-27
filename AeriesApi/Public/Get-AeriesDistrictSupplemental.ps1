@@ -1,9 +1,9 @@
 function Get-AeriesDistrictSupplemental
 {
-    <#  
+    <#
         .SYNOPSIS
         Get District Supplemental from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesDistrictSupplemental cmdlet is used to retrieve District Supplemental for all or a specific Student from Aeries
 

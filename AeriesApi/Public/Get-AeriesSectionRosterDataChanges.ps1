@@ -1,9 +1,9 @@
 function Get-AeriesSectionRosterDataChanges
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Section Roster Data Changes from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSectionRosterDataChanges cmdlet is used to retrieve all Section Roster Data Changes from Aeries since a given date
 

@@ -1,9 +1,9 @@
 function Get-AeriesSchool
 {
-    <#  
+    <#
         .SYNOPSIS
         Get a specific school or all schools from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSchoolInformation cmdlet is used to retrieve a specific school or all schools from Aeries
 

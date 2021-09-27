@@ -1,9 +1,9 @@
 function Get-AeriesStudentReportCard
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or more Students Report Cards from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentReportCard cmdlet is used to retrieve Report Cards for all or a specific Student from Aeries
 

@@ -1,9 +1,9 @@
 function Get-AeriesAlternateCourseRequest
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Alternate Course Requests from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesAlternateCourseRequest cmdlet is used to retrieve a filtered set or all Alternate Course Requests from Aeries
 
@@ -58,10 +58,10 @@ function Get-AeriesAlternateCourseRequest
         if ($StudentID -gt 0) {
             $Endpoint += "/students/$StudentID/alternatecourserequests/$Sequence"
         }
-        elseif ($StudentNumber -gt 0) {
+elseif ($StudentNumber -gt 0) {
             $Endpoint += "/students/sn/$StudentNumber/alternatecourserequests/$Sequence"
         }
-        else {
+else {
             $Endpoint += "/scheduling/alternatecourserequests"
         }
     }

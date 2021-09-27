@@ -1,9 +1,9 @@
 function Get-AeriesFee
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Fees and Fines from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesFee cmdlet is used to retrieve Fees and Fines for all or a specific Student from Aeries
 

@@ -1,9 +1,9 @@
 function Get-AeriesSchedulingSection
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Scheduling Sections from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSchedulingSection cmdlet is used to retrieve a filtered set or all Scheduling Sections from Aeries
 

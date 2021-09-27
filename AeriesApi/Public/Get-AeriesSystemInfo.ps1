@@ -1,9 +1,9 @@
 function Get-AeriesSystemInfo
 {
-    <#  
+    <#
         .SYNOPSIS
         Get the System Info for Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSystemInfo cmdlet is used to retrieve the System Info for Aeries
 
@@ -14,7 +14,7 @@ function Get-AeriesSystemInfo
 
     [CmdletBinding()]
     param ()
-    
+
     Begin {
         Write-Verbose -Message "Begin running $($MyInvocation.MyCommand)"
 

@@ -1,9 +1,9 @@
 function Get-AeriesSchoolSupplemental
 {
-    <#  
+    <#
         .SYNOPSIS
         Get School Supplemental from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSchoolSupplemental cmdlet is used to retrieve School Supplemental for all or a specific Student from Aeries
 

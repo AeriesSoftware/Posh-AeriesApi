@@ -1,9 +1,9 @@
 function Get-AeriesAttendanceHistoryDetail
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Attendace History Detail from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesAttendanceHistoryDetail cmdlet is used to retrieve a specific or all of Student Attendace History Details from Aeries
 
@@ -47,7 +47,7 @@ function Get-AeriesAttendanceHistoryDetail
         if ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
-        else {
+else {
             $Endpoint += "/$StudentID"
         }
     }

@@ -1,9 +1,9 @@
 function Get-AeriesAuthorization
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Authorizations from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesAuthorization cmdlet is used to retrieve Authorizations for all or a specific Student from Aeries
 

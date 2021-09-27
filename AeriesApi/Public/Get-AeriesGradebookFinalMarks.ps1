@@ -1,9 +1,9 @@
 function Get-AeriesGradebookFinalMarks
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Gradebook Final Marks from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesGradebookFinalMarks cmdlet is used to retrieve Final Marks for a Gradebook from Aeries
 

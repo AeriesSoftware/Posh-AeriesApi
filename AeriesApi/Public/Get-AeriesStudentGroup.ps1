@@ -1,9 +1,9 @@
 function Get-AeriesStudentGroup
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Student Groups from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentGroup cmdlet is used to retrieve Student Groups for all Students from Aeries
 

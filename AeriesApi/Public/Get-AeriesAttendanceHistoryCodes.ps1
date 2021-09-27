@@ -1,9 +1,9 @@
 function Get-AeriesAttendanceHistoryCodes
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Attendace History Codes from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesAttendanceHistoryCodes cmdlet is used to retrieve all of Attendace History Codes from Aeries
 

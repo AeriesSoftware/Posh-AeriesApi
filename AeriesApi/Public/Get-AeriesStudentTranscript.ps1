@@ -1,9 +1,9 @@
 function Get-AeriesStudentTranscript
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or more Students Transcript from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentTranscript cmdlet is used to retrieve Transcript for all or a specific Student from Aeries
 
@@ -44,16 +44,16 @@ function Get-AeriesStudentTranscript
         $Endpoint = "v5/schools/$SchoolCode/Transcript/$StudentID"
 
         $QueryParameters = @{}
-        if ($StartingRecord -ge 1) {
+if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-        }
-        if ($EndingRecord -ge 1) {
+}
+if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-        }
+}
     }
 
     Process {

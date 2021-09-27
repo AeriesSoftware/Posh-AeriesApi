@@ -1,9 +1,9 @@
 function Get-AeriesTemplate
 {
-    <#  
+    <#
         .SYNOPSIS
         Get something from Aeries
-        
+
         .DESCRIPTION
         The Template-AeriesApi cmdlet is used to retrieve a specific something or all of something from Aeries
 

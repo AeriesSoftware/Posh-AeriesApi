@@ -1,9 +1,9 @@
 function Get-AeriesSection
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Sections from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSection cmdlet is used to retrieve a filtered set or all Sections from Aeries
 

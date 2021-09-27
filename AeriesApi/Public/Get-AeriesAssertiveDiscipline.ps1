@@ -1,9 +1,9 @@
 function Get-AeriesAssertiveDiscipline
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Assertive Discipline from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesAssertiveDiscipline cmdlet is used to retrieve Assertive Discipline for all or a specific Student from Aeries
 

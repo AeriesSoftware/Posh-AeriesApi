@@ -1,9 +1,9 @@
 function Get-AeriesCourseDataChanges
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Course Data Changes from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesCourseDataChanges cmdlet is used to retrieve all Course Data Changes from Aeries since a given date
 

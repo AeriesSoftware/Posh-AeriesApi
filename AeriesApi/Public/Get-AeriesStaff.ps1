@@ -1,9 +1,9 @@
 function Get-AeriesStaff
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Staff records from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStaff cmdlet is used to retrieve one or all Staff records from Aeries
 
@@ -45,7 +45,7 @@ function Get-AeriesStaff
         if ($StaffID -gt 0) {
             $Endpoint += "/$StaffID"
         }
-        elseif (![string]::IsNullOrWhiteSpace($HRID)) {
+elseif (![string]::IsNullOrWhiteSpace($HRID)) {
             $Endpoint += "/hrid/$HRID"
         }
     }

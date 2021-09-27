@@ -1,9 +1,9 @@
 function Get-AeriesSectionRoster
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Section Class Roster from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesSectionRoster cmdlet is used to retrieve a filtered set or all Section Class Roster from Aeries
 

@@ -1,9 +1,9 @@
 function Get-AeriesReportCardMarkingPeriod
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Report Card Marking Periods from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesReportCardMarkingPeriod cmdlet is used to retrieve Repot Card Marking Periods for a specific School from Aeries
 

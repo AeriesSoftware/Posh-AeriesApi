@@ -1,9 +1,9 @@
 function Edit-AeriesStudent
 {
-    <#  
+    <#
         .SYNOPSIS
         Edit a Student in Aeries
-        
+
         .DESCRIPTION
         The Edit-AeriesStudent cmdlet is used to edit a Student in Aeries
         No fields are technically required other than StudentID, but you can update as many as you'd like in one call
@@ -340,307 +340,307 @@ function Edit-AeriesStudent
             <# String value #>
             $Body.LastName = $LastName
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($FirstName)) {
             <# String value #>
             $Body.FirstName = $FirstName
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MiddleName)) {
             <# String value #>
             $Body.MiddleName = $MiddleName
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($NameSuffix)) {
             <# String value #>
             $Body.NameSuffix = $NameSuffix
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Gender)) {
             <# String value #>
             $Body.Gender = $Gender
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Grade)) {
             <# String value #>
             $Body.Grade = $Grade
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($NextGrade)) {
             <# String value #>
             $Body.NextGrade = $NextGrade
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($NextSchool) -and ($NextSchool -gt -1)) {
             <# String value #>
             $Body.NextSchool = $NextSchool
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($BirthDate)) {
             <# Datetime value #>
             $Body.BirthDate = $BirthDate.ToString("yyyy-MM-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($InactiveStatusCode)) {
             <# String value #>
             $Body.InactiveStatusCode = $InactiveStatusCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomePhone)) {
             <# String value #>
             $Body.HomePhone = $HomePhone
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomeLanguageCode)) {
             <# String value #>
             $Body.HomeLanguageCode = $HomeLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($CorrespondanceLanguageCode)) {
             <# String value #>
             $Body.CorrespondanceLanguageCode = $CorrespondanceLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($LanguageFluencyCode)) {
             <# String value #>
             $Body.LanguageFluencyCode = $LanguageFluencyCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($EthnicityCode)) {
             <# String value #>
             $Body.EthnicityCode = $EthnicityCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Race1Code)) {
             <# String value #>
             $Body.Race1Code = $Race1Code
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Race2Code)) {
             <# String value #>
             $Body.Race2Code = $Race2Code
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Race3Code)) {
             <# String value #>
             $Body.Race3Code = $Race3Code
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Race4Code)) {
             <# String value #>
             $Body.Race4Code = $Race4Code
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($Race5Code)) {
             <# String value #>
             $Body.Race5Code = $Race5Code
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($LastSchool) -and ($LastSchool -gt -1)) {
             <# String value #>
             $Body.LastSchool = $LastSchool
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceSchool) -and ($ResidenceSchool -gt -1)) {
             <# String value #>
             $Body.ResidenceSchool = $ResidenceSchool
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($NextResidenceSchool) -and ($NextResidenceSchool -gt -1)) {
             <# String value #>
             $Body.NextResidenceSchool = $NextResidenceSchool
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($SchoolEnterDate)) {
             <# String value #>
             $Body.SchoolEnterDate = $SchoolEnterDate.ToString("yyyy-MM-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($DistrictEnterDate)) {
             <# String value #>
             $Body.DistrictEnterDate = $DistrictEnterDate.ToString("yyyy-MM-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($BirthCity)) {
             <# String value #>
             $Body.BirthCity = $BirthCity
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($BirthStateCode)) {
             <# String value #>
             $Body.BirthStateCode = $BirthStateCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($BirthCountryCode)) {
             <# String value #>
             $Body.BirthCountryCode = $BirthCountryCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ParentEdLevelCode)) {
             <# String value #>
             $Body.ParentEdLevelCode = $ParentEdLevelCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ParentGuardianName)) {
             <# String value #>
             $Body.ParentGuardianName = $ParentGuardianName
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddress)) {
             <# String value #>
             $Body.MailingAddress = $MailingAddress
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressCity)) {
             <# String value #>
             $Body.MailingAddressCity = $MailingAddressCity
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressState)) {
             <# String value #>
             $Body.MailingAddressState = $MailingAddressState
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipCode)) {
             <# String value #>
             $Body.MailingAddressZipCode = $MailingAddressZipCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipExt)) {
             <# String value #>
             $Body.MailingAddressZipExt = $MailingAddressZipExt
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddress)) {
             <# String value #>
             $Body.ResidenceAddress = $ResidenceAddress
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressCity)) {
             <# String value #>
             $Body.ResidenceAddressCity = $ResidenceAddressCity
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressState)) {
             <# String value #>
             $Body.ResidenceAddressState = $ResidenceAddressState
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipCode)) {
             <# String value #>
             $Body.ResidenceAddressZipCode = $ResidenceAddressZipCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipExt)) {
             <# String value #>
             $Body.ResidenceAddressZipExt = $ResidenceAddressZipExt
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyFirstLanguageCode)) {
             <# String value #>
             $Body.HomeLanguageSurveyFirstLanguageCode = $HomeLanguageSurveyFirstLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyPrimaryLanguageCode)) {
             <# String value #>
             $Body.HomeLanguageSurveyPrimaryLanguageCode = $HomeLanguageSurveyPrimaryLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyHomeLanguageCode)) {
             <# String value #>
             $Body.HomeLanguageSurveyHomeLanguageCode = $HomeLanguageSurveyHomeLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($HomeLanguageSurveyAdultLanguageCode)) {
             <# String value #>
             $Body.HomeLanguageSurveyAdultLanguageCode = $HomeLanguageSurveyAdultLanguageCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($USEnterDate)) {
             <# Datetime value #>
             $Body.USEnterDate = $USEnterDate.ToString("yyyy-MM-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($USSchoolEnterDate)) {
             <# Datetime value #>
             $Body.USSchoolEnterDate = $USSchoolEnterDate.ToString("yyyy-mm-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode1)) {
             <# String value #>
             $Body.UserCode1 = $UserCode1
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode2)) {
             <# String value #>
             $Body.UserCode2 = $UserCode2
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode3)) {
             <# String value #>
             $Body.UserCode3 = $UserCode3
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode4)) {
             <# String value #>
             $Body.UserCode4 = $UserCode4
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode5)) {
             <# String value #>
             $Body.UserCode5 = $UserCode5
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode6)) {
             <# String value #>
             $Body.UserCode6 = $UserCode6
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode7)) {
             <# String value #>
             $Body.UserCode7 = $UserCode7
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode8)) {
             <# String value #>
             $Body.UserCode8 = $UserCode8
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode9)) {
             <# String value #>
             $Body.UserCode9 = $UserCode9
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode10)) {
             <# String value #>
             $Body.UserCode10 = $UserCode10
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode11)) {
             <# String value #>
             $Body.UserCode11 = $UserCode11
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode12)) {
             <# String value #>
             $Body.UserCode12 = $UserCode12
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($UserCode13)) {
             <# String value #>
             $Body.UserCode13 = $UserCode13
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($WellbeingDate)) {
             <# Datetime value #>
             $Body.WellbeingDate = $WellbeingDate.ToString("yyyy-mm-dd")
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($WellbeingScore)) {
             <# String value #>
             $Body.WellbeingScore = $WellbeingScore
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($WellbeingAttentionCode)) {
             <# String value #>
             $Body.WellbeingAttentionCode = $WellbeingAttentionCode

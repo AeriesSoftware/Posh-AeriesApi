@@ -1,9 +1,9 @@
 function Get-AeriesAbsenceCode
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or all Absence Codes from Aeries for a specific School
-        
+
         .DESCRIPTION
         The Get-AeriesAbsenceCode cmdlet is used to retrieve one or all Absence Codes for a specific School from Aeries
 

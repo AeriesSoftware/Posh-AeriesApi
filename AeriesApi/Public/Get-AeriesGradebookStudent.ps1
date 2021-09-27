@@ -1,9 +1,9 @@
 function Get-AeriesGradebookStudent
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Gradebook Students from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesGradebookStudent cmdlet is used to retrieve a specific or all Gradebook Students from Aeries
 

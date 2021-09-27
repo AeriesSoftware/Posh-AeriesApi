@@ -1,9 +1,9 @@
 function Get-AeriesFlexPeriod
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Flex Periods from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesFlexPeriod cmdlet is used to retrieve a filtered set or all Flex Periods from Aeries
 
@@ -47,7 +47,7 @@ function Get-AeriesFlexPeriod
         if ($Sequence -gt 0) {
             $Endpoint += "/$Sequence"
         }
-        elseif ($StartYear -gt 0) {
+elseif ($StartYear -gt 0) {
             $Endpoint += "/year/$StartYear-$($StartYear+1)"
         }
     }

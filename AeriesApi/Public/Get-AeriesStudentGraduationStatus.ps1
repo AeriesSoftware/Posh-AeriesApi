@@ -1,9 +1,9 @@
 function Get-AeriesStudentGraduationStatus
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or more Students Graduation Status from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentGraduationStatus cmdlet is used to retrieve Graduation Status for all or a specific Student from Aeries
 
@@ -50,21 +50,21 @@ function Get-AeriesStudentGraduationStatus
         if (![string]::IsNullOrWhiteSpace($Grade)) {
             $Endpoint += "/grade/$Grade"
         }
-        else {
+else {
             $Endpoint += "/$StudentID"
         }
 
         $QueryParameters = @{}
-        if ($StartingRecord -ge 1) {
+if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-        }
-        if ($EndingRecord -ge 1) {
+}
+if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-        }
+}
     }
 
     Process {

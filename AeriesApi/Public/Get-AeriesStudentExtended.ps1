@@ -1,9 +1,9 @@
 function Get-AeriesStudentExtended
 {
-    <#  
+    <#
         .SYNOPSIS
         Get one or more Students Extended Information from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentExtended cmdlet is used to retrieve one or more Students Extended Information from Aeries
 
@@ -54,24 +54,24 @@ function Get-AeriesStudentExtended
         if ($StudentNumber -gt 0) {
             $Endpoint += "/sn/$StudentNumber/extended"
         }
-        elseif (![string]::IsNullOrWhiteSpace($Grade)) {
+elseif (![string]::IsNullOrWhiteSpace($Grade)) {
             $Endpoint += "/grade/$Grade/extended"
         }
-        else {
+else {
             $Endpoint += "/$StudentID/extended"
         }
 
         $QueryParameters = @{}
-        if ($StartingRecord -ge 1) {
+if ($StartingRecord -ge 1) {
             $QueryParameters += @{
                 "StartingRecord" = $StartingRecord
             }
-        }
-        if ($EndingRecord -ge 1) {
+}
+if ($EndingRecord -ge 1) {
             $QueryParameters += @{
                 "EndingRecord" = $EndingRecord
             }
-        }
+}
     }
 
     Process {

@@ -1,9 +1,9 @@
 function Get-AeriesStudentEnrollmentHistory
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Enrollment History from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentEnrollmentHistory cmdlet is used to retrieve a specific or all of Student Enrollment Histories from Aeries
 
@@ -60,15 +60,15 @@ function Get-AeriesStudentEnrollmentHistory
             # School Code and Academic Year were provided
             $Endpoint += "/schools/$SchoolCode/enrollment/$StudentID/year/$AcademicYear"
         }
-        elseif ($SchoolCode -gt 0) {
+elseif ($SchoolCode -gt 0) {
             # School Code is greater than 0
             $Endpoint += "/schools/$SchoolCode/enrollment/$StudentID"
         }
-        elseif (![string]::IsNullOrWhiteSpace($AcademicYear)) {
+elseif (![string]::IsNullOrWhiteSpace($AcademicYear)) {
             # Academic Year was provided
             $Endpoint += "/enrollment/$StudentID/year/$AcademicYear"
         }
-        else {
+else {
             # Default (can return a LOT of data if no Student ID is passed)
             $Endpoint += "/enrollment/$StudentID"
         }

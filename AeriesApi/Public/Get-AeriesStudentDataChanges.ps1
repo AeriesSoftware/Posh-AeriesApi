@@ -1,9 +1,9 @@
 function Get-AeriesStudentDataChanges
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Student Data Changes from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStudentDataChanges cmdlet is used to retrieve all Student Data Changes from Aeries since a given date
 

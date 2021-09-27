@@ -1,9 +1,9 @@
 function Get-AeriesStaffAssignment
 {
-    <#  
+    <#
         .SYNOPSIS
         Get Staff Assignments from Aeries
-        
+
         .DESCRIPTION
         The Get-AeriesStaffAssignment cmdlet is used to retrieve one or more Staff Assignment something from Aeries
 
@@ -52,10 +52,10 @@ function Get-AeriesStaffAssignment
         if ($Date -ne $null) {
             $Endpoint += "/date/" + $Date.ToString("yyyy/MM/dd") + "/$AssignmentType"
         }
-        elseif (![string]::IsNullOrWhiteSpace($AssignmentType) -and ($Sequence -gt 0)) {
+elseif (![string]::IsNullOrWhiteSpace($AssignmentType) -and ($Sequence -gt 0)) {
             $Endpoint += "/$AssignmentType/$Sequence"
         }
-        else {
+else {
             $Endpoint += "/$AssignmentType"
         }
     }

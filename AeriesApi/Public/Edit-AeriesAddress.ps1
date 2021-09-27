@@ -1,9 +1,9 @@
 function Edit-AeriesAddress
 {
-    <#  
+    <#
         .SYNOPSIS
         Edit a Students Address in Aeries
-        
+
         .DESCRIPTION
         The Edit-AeriesAddress cmdlet is used to edit a Students Address in Aeries
         If UpdateType is "Change", an EffectiveStartDate must be specified. If one is not specified, the current datetime will be used
@@ -95,47 +95,47 @@ function Edit-AeriesAddress
             <# String value #>
             $Body.MailingAddress = $MailingAddress
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressCity)) {
             <# String value #>
             $Body.MailingAddressCity = $MailingAddressCity
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressState)) {
             <# String value #>
             $Body.MailingAddressState = $MailingAddressState
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipCode)) {
             <# String value #>
             $Body.MailingAddressZipCode = $MailingAddressZipCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($MailingAddressZipExt)) {
             <# String value #>
             $Body.MailingAddressZipExt = $MailingAddressZipExt
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddress)) {
             <# String value #>
             $Body.ResidenceAddress = $ResidenceAddress
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressCity)) {
             <# String value #>
             $Body.ResidenceAddressCity = $ResidenceAddressCity
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressState)) {
             <# String value #>
             $Body.ResidenceAddressState = $ResidenceAddressState
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipCode)) {
             <# String value #>
             $Body.ResidenceAddressZipCode = $ResidenceAddressZipCode
         }
-        
+
         If (![string]::IsNullOrWhiteSpace($ResidenceAddressZipExt)) {
             <# String value #>
             $Body.ResidenceAddressZipExt = $ResidenceAddressZipExt
@@ -148,7 +148,7 @@ function Edit-AeriesAddress
                 <# Only send Effect Start Date on Change and not Correction #>
                 $Body.EffectiveStartDate = $EffectiveStartDate.ToString("yyyy-MM-dd")
             }
-        }
+}
 
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)
