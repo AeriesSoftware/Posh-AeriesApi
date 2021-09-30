@@ -2,8 +2,8 @@
 Import-Module -Name AeriesApi
 
 # Set some variables
-$URL = ""
-$Certificate = ""
+$URL = $args[0]
+$Certificate = $args[1]
 
 Initialize-AeriesApi -URL $URL -Certificate $Certificate
 
