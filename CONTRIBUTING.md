@@ -8,7 +8,7 @@ First of all, welcome! We're excited that you'd like to contribute. How would yo
 
 Everyone here is expected to abide by the [Contributor Covenant Code of Conduct](https://github.com/AeriesSoftware/Posh-AeriesApi/blob/CODE_OF_CONDUCT.md).
 
-Do you have a question not answered here? Ask us in the [#Posh-AeriesApi channel](https://aeriesaug.slack.com/messages/posh-aeriesapi) in Slack. We welcome newcomers, and there's always a way you can help.
+Do you have a question not answered here? Ask us in the [Discussions](https://github.com/AeriesSoftware/Posh-AeriesApi/discussions) area. We welcome newcomers, and there's always a way you can help.
 
 ## How to Report Bugs
 
