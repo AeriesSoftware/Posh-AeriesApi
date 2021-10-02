@@ -9,7 +9,7 @@ function Edit-AeriesContact
 
         .EXAMPLE
         Edit-AeriesContact -StudentID 99400001 -Sequence 1 -FirstName "Aeries" -LastName "Software"
-        This will create a Contact in Aeries for StudentID 99400001
+        This will edit a Contact in Aeries for StudentID 99400001
     #>
 
     [CmdletBinding()]
