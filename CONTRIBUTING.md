@@ -6,7 +6,7 @@ First of all, welcome! We're excited that you'd like to contribute. How would yo
 * [I'd like someone else to build something](#how-to-request-features)
 * [I'd like to build a new feature myself](#how-to-build-features-yourself)
 
-Everyone here is expected to abide by the [Contributor Covenant Code of Conduct](https://github.com/AeriesSoftware/Posh-AeriesApi/blob/CODE_OF_CONDUCT.md).
+Everyone here is expected to abide by the [Contributor Covenant Code of Conduct](https://github.com/AeriesSoftware/Posh-AeriesApi/blob/main/CODE_OF_CONDUCT.md).
 
 Do you have a question not answered here? Ask us in the [Discussions](https://github.com/AeriesSoftware/Posh-AeriesApi/discussions) area. We welcome newcomers, and there's always a way you can help.
 
