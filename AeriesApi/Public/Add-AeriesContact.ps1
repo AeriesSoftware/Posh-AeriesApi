@@ -269,7 +269,6 @@ function Add-AeriesContact
 
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)
-        Write-Output $BodyJSON
 
         $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode -Body $BodyJSON -ContentType $ContentType)
     }
