@@ -259,6 +259,11 @@ function Edit-AeriesStaff
             $Body.BirthDate = $BirthDate.ToString("yyyy-MM-dd")
         }
 
+        If (![string]::IsNullOrWhiteSpace($FullTimePercentage) -and ($FullTimePercentage -gt -1)) {
+            <# Int value #>
+            $Body.FullTimePercentage = $FullTimePercentage
+        }
+
         If (![string]::IsNullOrWhiteSpace($HireDate)) {
             <# Datetime value #>
             $Body.HireDate = $HireDate.ToString("yyyy-MM-dd")
@@ -428,7 +433,7 @@ function Edit-AeriesStaff
             <# String value #>
             $Body.EmergencyContactPhone = $EmergencyContactPhone
         }
-    
+
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)
 
