@@ -12,7 +12,7 @@ function Remove-AeriesContact
         This will remove a Contact in Aeries for StudentID 99400001 with a Sequence Number of 1
     #>
 
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [ValidateRange(1, [Int]::MaxValue)]
         [Parameter(Mandatory=$true)]
@@ -34,7 +34,9 @@ function Remove-AeriesContact
     }
 
     Process {
-        $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
+        if($PSCmdlet.ShouldProcess("Contact Sequence $Sequence for Student ID $StudentID")) {
+            $Result = (Invoke-AeriesApiCall -Method $Method -Endpoint $Endpoint -SuccessStatusCode $SuccessStatusCode)
+        }
     }
 
     End {
