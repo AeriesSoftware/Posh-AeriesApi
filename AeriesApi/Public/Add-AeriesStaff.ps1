@@ -35,7 +35,7 @@ function Add-AeriesStaff
         [string]
         $MiddleName,
 
-        [ValidateLength(1, [Int16]::MaxValue)]
+        [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $BirthYear = -1,
@@ -44,7 +44,7 @@ function Add-AeriesStaff
         [datetime]
         $BirthDate,
 
-        [ValidateLength(1, [Int16]::MaxValue)]
+        [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $FullTimePercentage = -1,
@@ -72,7 +72,7 @@ function Add-AeriesStaff
         [string]
         $EmailAddress,
 
-        [ValidateLength(1, [Int16]::MaxValue)]
+        [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $PrimaryAeriesSchool = -1,
@@ -147,12 +147,12 @@ function Add-AeriesStaff
         [string]
         $PositionStatusCode,
 
-        [ValidateLength(1, [Int16]::MaxValue)]
+        [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $TotalYearsOfEduService = -1,
 
-        [ValidateLength(1, [Int16]::MaxValue)]
+        [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $TotalYearsInThisDistrict = -1,
