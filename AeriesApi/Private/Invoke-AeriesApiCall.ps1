@@ -25,7 +25,7 @@ function Invoke-AeriesApiCall
         $Endpoint,
         # Success Status Code expected
         [Parameter(Mandatory=$false)]
-        [int]
+        [int[]]
         $SuccessStatusCode = 200,
         # Body to send the request with. Typically used for Post or Put
         [Parameter(Mandatory=$false, ValueFromPipeline)]
@@ -137,7 +137,7 @@ function Invoke-AeriesApiCall
         $ParseErrorCodes += 403 # Forbidden
         $ParseErrorCodes += 404 # Not Found
 
-        if ($StatusCode -eq $SuccessStatusCode) {
+        if ($StatusCode -in $SuccessStatusCode) {
             # If the request was a success, return the Content as a JSON object
             return ($ResponseBody | ConvertFrom-Json)
         }
