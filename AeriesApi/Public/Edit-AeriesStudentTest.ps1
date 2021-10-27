@@ -102,7 +102,7 @@ function Edit-AeriesStudentTest
         Write-Verbose -Message "Begin running $($MyInvocation.MyCommand)"
 
         $Method = "Post"
-        $SuccessStatusCode = 200
+        $SuccessStatusCode = 200,201
         $Endpoint = "v5/testing/UpdateScores"
         $ContentType = "application/json"
         $Body = @{}
