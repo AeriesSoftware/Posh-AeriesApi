@@ -76,6 +76,7 @@ FunctionsToExport = @(
     'Add-AeriesContact',
     'Add-AeriesCourseRequest',
     'Add-AeriesGradebookAssignment',
+    'Add-AeriesSchedulingSection',
     'Add-AeriesStaff',
     'Add-AeriesStaffAssignment',
     'Add-AeriesStudent',
@@ -87,6 +88,7 @@ FunctionsToExport = @(
     'Edit-AeriesCourseRequest',
     'Edit-AeriesGradebookAssignment',
     'Edit-AeriesGradebookAssignmentScore',
+    'Edit-AeriesSchedulingSection',
     'Edit-AeriesSchoolSupplemental',
     'Edit-AeriesStaff',
     'Edit-AeriesStaffAssignment',
@@ -155,6 +157,7 @@ FunctionsToExport = @(
     'Remove-AeriesAuthorization',
     'Remove-AeriesContact',
     'Remove-AeriesCourseRequest',
+    'Remove-AeriesSchedulingSection',
     'Remove-AeriesStaffAssignment',
     'Send-AeriesAlert',
     'Test-AeriesApiConnection'
