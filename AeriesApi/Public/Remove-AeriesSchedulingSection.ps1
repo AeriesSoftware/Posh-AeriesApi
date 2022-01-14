@@ -5,10 +5,10 @@ function Remove-AeriesSchedulingSection
         Removes a Scheduling Section in Aeries
 
         .DESCRIPTION
-        The Remove-AeriesContact cmdlet is used to remove a Scheduling Section in Aeries for a given SchoolCode and SectionNumber
+        The Remove-AeriesSchedulingSection cmdlet is used to remove a Scheduling Section in Aeries for a given SchoolCode and SectionNumber
 
         .EXAMPLE
-        Remove-AeriesContact -SchoolCode 884 -SectionNumber 1 -IsSectionStaff
+        Remove-AeriesSchedulingSection -SchoolCode 884 -SectionNumber 1
         This will remove a Scheduling Section in Aeries for SchoolCode 884 with a SectionNumber 1
     #>
 
@@ -22,11 +22,7 @@ function Remove-AeriesSchedulingSection
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
         [Int16]
-        $SectionNumber,
-
-        [Parameter(Mandatory=$false)]
-        [switch]
-        $IsSectionStaff
+        $SectionNumber
     )
 
     Begin {
@@ -35,7 +31,9 @@ function Remove-AeriesSchedulingSection
         $Method = "Delete"
         $SuccessStatusCode = 204
 
-        If ($IsSectionStaff) {
+        $School = (Get-AeriesSchool -SchoolCode $SchoolCode)
+
+        If ($School.UsingSectionStaffInScheduling) {
             $Endpoint = "v5/schools/$SchoolCode/scheduling/sections/$SectionNumber"
         }
         else
