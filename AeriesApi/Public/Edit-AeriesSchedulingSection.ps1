@@ -8,7 +8,7 @@ function Edit-AeriesSchedulingSection
         The Edit-AeriesSchedulingSection cmdlet is used to edit a Scheduling Section in Aeries for the given SchoolCode and SectionNumber
 
         .EXAMPLE
-        Edit-AeriesSchedulingSection -SchoolCode 884 -SectionNumber 1 -IsSectionStaff
+        Edit-AeriesSchedulingSection -SchoolCode 884 -SectionNumber 1
         This will edit a Schedule Section in Aeries for SchoolCode 884, Section 1
     #>
 
@@ -22,11 +22,7 @@ function Edit-AeriesSchedulingSection
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$true)]
         [Int16]
-        $SectionNumber,
-
-        [Parameter(Mandatory=$false)]
-        [switch]
-        $IsSectionStaff
+        $SectionNumber
     )
 
     Begin {
@@ -36,6 +32,9 @@ function Edit-AeriesSchedulingSection
         $SuccessStatusCode = 200,201
         $ContentType = "application/json"
         $Body = @{}
+
+        $School = (Get-AeriesSchool -SchoolCode $SchoolCode)
+        $IsSectionStaff = $School.UsingSectionStaffInScheduling
 
         If ($IsSectionStaff) {
             $Endpoint = "v5/schools/$SchoolCode/scheduling/sections/$SectionNumber"
