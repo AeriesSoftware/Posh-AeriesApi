@@ -24,10 +24,10 @@ function Add-AeriesSchedulingSection
         [Int16]
         $SectionNumber,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(0, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $Period,
+        $Period = -1,
 
         [ValidateRange(1, [Int]::MaxValue)]
         [Parameter(Mandatory=$false)]
@@ -40,7 +40,7 @@ function Add-AeriesSchedulingSection
         $PeriodBlock,
 
         [ValidateLength(1, 1)]
-        [Parameter(Mandatory=$false)]
+        [Parameter(Mandatory=$true)]
         [string]
         $Semester,
 
@@ -79,20 +79,20 @@ function Add-AeriesSchedulingSection
         [string]
         $CourseID,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(0, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $TeacherNumber1,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(0, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $TeacherNumber2,
+        $TeacherNumber2 = -1,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(0, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $TeacherNumber3,
+        $TeacherNumber3 = -1,
 
         [ValidateLength(1, 1)]
         [Parameter(Mandatory=$false)]
@@ -123,15 +123,15 @@ function Add-AeriesSchedulingSection
         [string]
         $GenderRestriction,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(-2, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $LowGrade,
+        $LowGrade = -99, <# -99 because technically -1 that I usually use is a valid grade #>
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateRange(-2, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
-        $HighGrade,
+        $HighGrade = -99, <# -99 because technically -1 that I usually use is a valid grade #>
 
         [ValidateRange(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
@@ -386,7 +386,7 @@ function Add-AeriesSchedulingSection
         $ExcludeFromScheduler,
 
         [Parameter(Mandatory=$false)]
-        [object[]]
+        [SectionStaffMember[]]
         $SectionStaffMembers
     )
 
@@ -400,6 +400,11 @@ function Add-AeriesSchedulingSection
 
         $School = (Get-AeriesSchool -SchoolCode $SchoolCode)
         $IsSectionStaff = $School.UsingSectionStaffInScheduling
+        $IsFlexible = $false
+
+        If ($School.ScheduleType -ieq "Flexible") {
+            $IsFlexible = $true
+        }
 
         If ($IsSectionStaff) {
             $Endpoint = "v5/schools/$SchoolCode/scheduling/sections"
@@ -411,6 +416,378 @@ function Add-AeriesSchedulingSection
     }
 
     Process {
+
+        If (!$IsFlexible) {
+            <# Quick little checks to make sure the required fields for NON Flex schools are there #>
+            If ($PeriodBlock -eq 0) {
+                Throw "PeriodBlock is required for Non-Flex Schools"
+            }
+            If ($Period -eq -1) {
+                Throw "Period is required for Non-Flex Schools"
+            }
+        }
+
+        $Body.SchoolCode = $SchoolCode
+        $Body.CourseID = $CourseID
+        $Body.Semester = $Semester
+
+        If ($IsFlexible) {
+            <# Process all the things that are needed for Flex #>
+            If ($FlexPeriodSequenceNumber -gt 0) {
+                <# Int Value #>
+                $Body.FlexPeriodSequenceNumber = $FlexPeriodSequenceNumber
+            }
+        }
+        else
+        {
+            <# Process all the things that are needed for NON Flex #>
+            If ($Period -gt -1) {
+                <# Int16 Value #>
+                $Body.Period = $Period
+            }
+
+            If ($PeriodBlock -gt 0) {
+                <# Int16 Value #>
+                $Body.PeriodBlock = $PeriodBlock
+            }
+    
+            If (![string]::IsNullOrWhiteSpace($SplitTerm)) {
+                <# String Value #>
+                $Body.SplitTerm = $SplitTerm
+            }
+        }
+
+        If ($IsSectionStaff) {
+            <# Process all the things needed for Section Staff #>
+            If ($ClassCalendarSequenceNumber -gt 0) {
+                <# Int Value #>
+                $Body.ClassCalendarSequenceNumber = $ClassCalendarSequenceNumber
+            }
+            
+            If ($SectionStaffMembers.Count -gt 0) {
+                <# SectionStaffMember[] Value #>
+                $Body.SectionStaffMembers = $SectionStaffMembers
+            }
+        }
+        else
+        {
+            <# Process all the things needed for NON Section Staff #>
+            If ($TeacherNumber1 -gt -1) {
+                <# Int Value #>
+                $Body.TeacherNumber1 = $TeacherNumber1
+            }
+    
+            If ($TeacherNumber2 -gt -1) {
+                <# Int Value #>
+                $Body.TeacherNumber2 = $TeacherNumber2
+            }
+    
+            If ($TeacherNumber3 -gt -1) {
+                <# Int Value #>
+                $Body.TeacherNumber3 = $TeacherNumber3
+            }
+
+            If (![string]::IsNullOrWhiteSpace($HighlyQualifiedStatusCode1)) {
+                <# String Value #>
+                $Body.HighlyQualifiedStatusCode1 = $HighlyQualifiedStatusCode1
+            }
+    
+            If (![string]::IsNullOrWhiteSpace($HighlyQualifiedStatusCode2)) {
+                <# String Value #>
+                $Body.HighlyQualifiedStatusCode2 = $HighlyQualifiedStatusCode2
+            }
+    
+            If (![string]::IsNullOrWhiteSpace($HighlyQualifiedStatusCode3)) {
+                <# String Value #>
+                $Body.HighlyQualifiedStatusCode3 = $HighlyQualifiedStatusCode3
+            }
+        }
+
+        <# Everything else that doesn't rely on SectionStaff or Flex #>
+        If ($SectionNumber -gt 0) {
+            <# Int16 Value #>
+            $Body.SectionNumber = $SectionNumber
+        }
+
+        If (![string]::IsNullOrWhiteSpace($Room)) {
+            <# String Value #>
+            $Body.Room = $Room
+        }
+
+        If ($Credit -gt 0) {
+            <# Decimal Value #>
+            $Body.Credit = $Credit
+        }
+
+        If (![string]::IsNullOrWhiteSpace($GenderRestriction)) {
+            <# String Value #>
+            $Body.GenderRestriction = $GenderRestriction
+        }
+
+        If ($LowGrade -gt -99) {
+            <# Int16 Value #>
+            $Body.LowGrade = $LowGrade
+        }
+
+        If ($HighGrade -gt -99) {
+            <# Int16 Value #>
+            $Body.HighGrade = $HighGrade
+        }
+
+        If ($MaxStudents -gt 0) {
+            <# Int16 Value #>
+            $Body.MaxStudents = $MaxStudents
+        }
+
+        If (![string]::IsNullOrWhiteSpace($InactiveStatusCode)) {
+            <# String Value #>
+            $Body.InactiveStatusCode = $InactiveStatusCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ProgramCode)) {
+            <# String Value #>
+            $Body.ProgramCode = $ProgramCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($HourlyAttendanceProgramCode)) {
+            <# String Value #>
+            $Body.HourlyAttendanceProgramCode = $HourlyAttendanceProgramCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ExclusionCode)) {
+            <# String Value #>
+            $Body.ExclusionCode = $ExclusionCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($CountsForADA)) {
+            <# String Value #>
+            $Body.CountsForADA = $CountsForADA
+        }
+
+        If (![string]::IsNullOrWhiteSpace($MultiTeacherCode)) {
+            <# String Value #>
+            $Body.MultiTeacherCode = $MultiTeacherCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($SchedulingGroup)) {
+            <# String Value #>
+            $Body.SchedulingGroup = $SchedulingGroup
+        }
+
+        If (![string]::IsNullOrWhiteSpace($TeamCourseGroup)) {
+            <# String Value #>
+            $Body.TeamCourseGroup = $TeamCourseGroup
+        }
+
+        If ($TeamNumber -gt 0) {
+            <# Int Value #>
+            $Body.TeamNumber = $TeamNumber
+        }
+
+        If (![string]::IsNullOrWhiteSpace($SemesterGroup)) {
+            <# String Value #>
+            $Body.SemesterGroup = $SemesterGroup
+        }
+
+        If (![string]::IsNullOrWhiteSpace($Track)) {
+            <# String Value #>
+            $Body.Track = $Track
+        }
+
+        If ($ClassID -gt 0) {
+            <# Int Value #>
+            $Body.ClassID = $ClassID
+        }
+
+        If (![string]::IsNullOrWhiteSpace($EducationServiceCode)) {
+            <# String Value #>
+            $Body.EducationServiceCode = $EducationServiceCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($LanguageOfInstructionCode)) {
+            <# String Value #>
+            $Body.LanguageOfInstructionCode = $LanguageOfInstructionCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($InstructionalStrategyCode)) {
+            <# String Value #>
+            $Body.InstructionalStrategyCode = $InstructionalStrategyCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($FundingSourceCode)) {
+            <# String Value #>
+            $Body.FundingSourceCode = $FundingSourceCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($CareerTechnicalEducationProviderCode)) {
+            <# String Value #>
+            $Body.CareerTechnicalEducationProviderCode = $CareerTechnicalEducationProviderCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($IndependentStudyIndicator)) {
+            <# String Value #>
+            $Body.IndependentStudyIndicator = $IndependentStudyIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($DistanceLearningIndicator)) {
+            <# String Value #>
+            $Body.DistanceLearningIndicator = $DistanceLearningIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ItinerantTeacherIndicator)) {
+            <# String Value #>
+            $Body.ItinerantTeacherIndicator = $ItinerantTeacherIndicator
+        }
+
+        If ($UseSupplementalAttendance) {
+            <# Switch Value #>
+            $Body.UseSupplementalAttendance = $UseSupplementalAttendance
+        }
+
+        If (![string]::IsNullOrWhiteSpace($PopulationServedCode)) {
+            <# String Value #>
+            $Body.PopulationServedCode = $PopulationServedCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ClassTypeCode)) {
+            <# String Value #>
+            $Body.ClassTypeCode = $ClassTypeCode
+        }
+
+        If ($MonthlyMinutes -gt 0) {
+            <# Int16 Value #>
+            $Body.MonthlyMinutes = $MonthlyMinutes
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode1)) {
+            <# String Value #>
+            $Body.UserCode1 = $UserCode1
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode2)) {
+            <# String Value #>
+            $Body.UserCode2 = $UserCode2
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode3)) {
+            <# String Value #>
+            $Body.UserCode3 = $UserCode3
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode4)) {
+            <# String Value #>
+            $Body.UserCode4 = $UserCode4
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode5)) {
+            <# String Value #>
+            $Body.UserCode5 = $UserCode5
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode6)) {
+            <# String Value #>
+            $Body.UserCode6 = $UserCode6
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode7)) {
+            <# String Value #>
+            $Body.UserCode7 = $UserCode7
+        }
+
+        If (![string]::IsNullOrWhiteSpace($UserCode8)) {
+            <# String Value #>
+            $Body.UserCode8 = $UserCode8
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ArticulatedCourseIndicator)) {
+            <# String Value #>
+            $Body.ArticulatedCourseIndicator = $ArticulatedCourseIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($NonCampusBasedInstructionCode)) {
+            <# String Value #>
+            $Body.NonCampusBasedInstructionCode = $NonCampusBasedInstructionCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($PreKSchoolTypeCode)) {
+            <# String Value #>
+            $Body.PreKSchoolTypeCode = $PreKSchoolTypeCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($PreKCurriculaCode)) {
+            <# String Value #>
+            $Body.PreKCurriculaCode = $PreKCurriculaCode
+        }
+
+        If ($IsHighQualityPreKProgram) {
+            <# Switch Value #>
+            $Body.IsHighQualityPreKProgram = $IsHighQualityPreKProgram
+        }
+
+        If (![string]::IsNullOrWhiteSpace($InstructionTypeCode)) {
+            <# String Value #>
+            $Body.InstructionTypeCode = $InstructionTypeCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ProgramEvaluationTypeCode)) {
+            <# String Value #>
+            $Body.ProgramEvaluationTypeCode = $ProgramEvaluationTypeCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($EducationalEnvironmentCode)) {
+            <# String Value #>
+            $Body.EducationalEnvironmentCode = $EducationalEnvironmentCode
+        }
+
+        If ($CareerTechnicalEducationHours -gt 0) {
+            <# Int16 Value #>
+            $Body.CareerTechnicalEducationHours = $CareerTechnicalEducationHours
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ContentSubcategoryCode)) {
+            <# String Value #>
+            $Body.ContentSubcategoryCode = $ContentSubcategoryCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($CharterNonCoreIndicator)) {
+            <# String Value #>
+            $Body.CharterNonCoreIndicator = $CharterNonCoreIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($AdvancedCourseStateCode)) {
+            <# String Value #>
+            $Body.AdvancedCourseStateCode = $AdvancedCourseStateCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($OnlineInstructionTypeCode)) {
+            <# String Value #>
+            $Body.OnlineInstructionTypeCode = $OnlineInstructionTypeCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($MiddleSchoolCoreIndicator)) {
+            <# String Value #>
+            $Body.MiddleSchoolCoreIndicator = $MiddleSchoolCoreIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($NonCredentialedAuthorizationCode)) {
+            <# String Value #>
+            $Body.NonCredentialedAuthorizationCode = $NonCredentialedAuthorizationCode
+        }
+
+        If (![string]::IsNullOrWhiteSpace($HighQualityCareerTechnicalEducationIndicator)) {
+            <# String Value #>
+            $Body.HighQualityCareerTechnicalEducationIndicator = $HighQualityCareerTechnicalEducationIndicator
+        }
+
+        If (![string]::IsNullOrWhiteSpace($ArenaSchedulingIndicator)) {
+            <# String Value #>
+            $Body.ArenaSchedulingIndicator = $ArenaSchedulingIndicator
+        }
+
+        If ($ExcludeFromScheduler) {
+            <# Switch Value #>
+            $Body.ExcludeFromScheduler = $ExcludeFromScheduler
+        }
 
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)
