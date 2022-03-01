@@ -57,7 +57,9 @@ PowerShellVersion = '5.1'
 # RequiredAssemblies = @()
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-# ScriptsToProcess = @()
+ScriptsToProcess = @(
+    'Classes\SectionStaffMember.ps1'
+)
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()
@@ -70,9 +72,30 @@ PowerShellVersion = '5.1'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
+    'Add-AeriesActivity',
+    'Add-AeriesAlternateCourseRequest',
+    'Add-AeriesAuthorization',
+    'Add-AeriesContact',
+    'Add-AeriesCourseRequest',
+    'Add-AeriesGradebookAssignment',
+    'Add-AeriesSchedulingSection',
+    'Add-AeriesStaff',
+    'Add-AeriesStaffAssignment',
     'Add-AeriesStudent',
+    'Edit-AeriesActivity',
     'Edit-AeriesAddress',
+    'Edit-AeriesAlternateCourseRequest',
+    'Edit-AeriesAuthorization',
+    'Edit-AeriesContact',
+    'Edit-AeriesCourseRequest',
+    'Edit-AeriesGradebookAssignment',
+    'Edit-AeriesGradebookAssignmentScore',
+    'Edit-AeriesSchedulingSection',
+    'Edit-AeriesSchoolSupplemental',
+    'Edit-AeriesStaff',
+    'Edit-AeriesStaffAssignment',
     'Edit-AeriesStudent',
+    'Edit-AeriesStudentTest',
     'Get-AeriesAbsenceCode',
     'Get-AeriesActivity',
     'Get-AeriesAlternateCourseRequest',
@@ -131,6 +154,14 @@ FunctionsToExport = @(
     'Initialize-AeriesApi',
     'Initialize-AeriesPreEnrollActive',
     'Initialize-AeriesPreEnrollInactive',
+    'Remove-AeriesActivity',
+    'Remove-AeriesAlternateCourseRequest',
+    'Remove-AeriesAuthorization',
+    'Remove-AeriesContact',
+    'Remove-AeriesCourseRequest',
+    'Remove-AeriesSchedulingSection',
+    'Remove-AeriesStaffAssignment',
+    'Send-AeriesAlert',
     'Test-AeriesApiConnection'
 )
 
