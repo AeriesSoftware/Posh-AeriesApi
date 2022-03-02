@@ -12,7 +12,7 @@
 RootModule = 'AeriesApi.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0'
+ModuleVersion = '1.0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@ CompanyName = 'Aeries Software, Inc.'
 Copyright = '(c) Aeries Software, Inc. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'AeriesApi PowerShell Module is meant to simplify integrations utilizing the Aeries API rather than requiring SQL scripts to be maintained. This project will also standardize ways to utilize the Aeries API for any type of integration such as generating CSV extracts.'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.1'
@@ -189,13 +189,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('PSEdition_Desktop','PSEdition_Core','Windows','Linux','MacOS','Aeries','AeriesSIS')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/AeriesSoftware/Posh-AeriesApi/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/AeriesSoftware/Posh-AeriesApi'
 
         # A URL to an icon representing this module.
         # IconUri = ''
