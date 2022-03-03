@@ -12,7 +12,7 @@
 RootModule = 'AeriesApi.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@ CompanyName = 'Aeries Software, Inc.'
 Copyright = '(c) Aeries Software, Inc. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'AeriesApi PowerShell Module is meant to simplify integrations utilizing the Aeries API rather than requiring SQL scripts to be maintained. This project will also standardize ways to utilize the Aeries API for any type of integration such as generating CSV extracts.'
+# Description = ''
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.1'
@@ -57,9 +57,7 @@ PowerShellVersion = '5.1'
 # RequiredAssemblies = @()
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-ScriptsToProcess = @(
-    'Classes\SectionStaffMember.ps1'
-)
+# ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()
@@ -72,30 +70,9 @@ ScriptsToProcess = @(
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @(
-    'Add-AeriesActivity',
-    'Add-AeriesAlternateCourseRequest',
-    'Add-AeriesAuthorization',
-    'Add-AeriesContact',
-    'Add-AeriesCourseRequest',
-    'Add-AeriesGradebookAssignment',
-    'Add-AeriesSchedulingSection',
-    'Add-AeriesStaff',
-    'Add-AeriesStaffAssignment',
     'Add-AeriesStudent',
-    'Edit-AeriesActivity',
     'Edit-AeriesAddress',
-    'Edit-AeriesAlternateCourseRequest',
-    'Edit-AeriesAuthorization',
-    'Edit-AeriesContact',
-    'Edit-AeriesCourseRequest',
-    'Edit-AeriesGradebookAssignment',
-    'Edit-AeriesGradebookAssignmentScore',
-    'Edit-AeriesSchedulingSection',
-    'Edit-AeriesSchoolSupplemental',
-    'Edit-AeriesStaff',
-    'Edit-AeriesStaffAssignment',
     'Edit-AeriesStudent',
-    'Edit-AeriesStudentTest',
     'Get-AeriesAbsenceCode',
     'Get-AeriesActivity',
     'Get-AeriesAlternateCourseRequest',
@@ -154,14 +131,6 @@ FunctionsToExport = @(
     'Initialize-AeriesApi',
     'Initialize-AeriesPreEnrollActive',
     'Initialize-AeriesPreEnrollInactive',
-    'Remove-AeriesActivity',
-    'Remove-AeriesAlternateCourseRequest',
-    'Remove-AeriesAuthorization',
-    'Remove-AeriesContact',
-    'Remove-AeriesCourseRequest',
-    'Remove-AeriesSchedulingSection',
-    'Remove-AeriesStaffAssignment',
-    'Send-AeriesAlert',
     'Test-AeriesApiConnection'
 )
 
@@ -189,13 +158,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('PSEdition_Desktop','PSEdition_Core','Windows','Linux','MacOS','Aeries','AeriesSIS')
+        # Tags = @()
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/AeriesSoftware/Posh-AeriesApi/blob/main/LICENSE'
+        # LicenseUri = ''
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/AeriesSoftware/Posh-AeriesApi'
+        # ProjectUri = ''
 
         # A URL to an icon representing this module.
         # IconUri = ''
