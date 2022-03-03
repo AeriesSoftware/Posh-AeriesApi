@@ -35,7 +35,7 @@ function Add-AeriesStaff
         [string]
         $MiddleName,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateLength(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $BirthYear = -1,
@@ -44,7 +44,7 @@ function Add-AeriesStaff
         [datetime]
         $BirthDate,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateLength(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $FullTimePercentage = -1,
@@ -72,7 +72,7 @@ function Add-AeriesStaff
         [string]
         $EmailAddress,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateLength(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $PrimaryAeriesSchool = -1,
@@ -147,12 +147,12 @@ function Add-AeriesStaff
         [string]
         $PositionStatusCode,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateLength(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $TotalYearsOfEduService = -1,
 
-        [ValidateRange(1, [Int16]::MaxValue)]
+        [ValidateLength(1, [Int16]::MaxValue)]
         [Parameter(Mandatory=$false)]
         [Int16]
         $TotalYearsInThisDistrict = -1,
@@ -262,11 +262,6 @@ function Add-AeriesStaff
         If (![string]::IsNullOrWhiteSpace($BirthDate)) {
             <# Datetime value #>
             $Body.BirthDate = $BirthDate.ToString("yyyy-MM-dd")
-        }
-
-        If (![string]::IsNullOrWhiteSpace($FullTimePercentage) -and ($FullTimePercentage -gt -1)) {
-            <# Int value #>
-            $Body.FullTimePercentage = $FullTimePercentage
         }
 
         If (![string]::IsNullOrWhiteSpace($HireDate)) {
@@ -438,7 +433,7 @@ function Add-AeriesStaff
             <# String value #>
             $Body.EmergencyContactPhone = $EmergencyContactPhone
         }
-
+    
         <# Turn the $Body variable into a JSON string for sending to the server #>
         $BodyJSON = ($Body | ConvertTo-Json -Compress)
 
