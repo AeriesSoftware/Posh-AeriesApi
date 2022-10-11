@@ -36,7 +36,7 @@ function Get-AeriesSection
         $Endpoint = "v5/schools/$SchoolCode/sections"
 
         if ($SectionNumber -gt 0) {
-            $Endpoint =+ "/$SectionNumber"
+            $Endpoint += "/$SectionNumber"
         }
     }
 
