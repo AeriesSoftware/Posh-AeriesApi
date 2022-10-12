@@ -8,13 +8,13 @@ This project will also standardize ways to utilize the Aeries API for any type o
 
 # Getting Started
 1.	Install the module with `Install-Module -Name AeriesApi`
-2.	Dependencies include PowerShell 5.1+ or PowerShell Core 7.1.3+
+2.	Dependencies include PowerShell 5.1+ or PowerShell 7+
 3.	Utilize the module by putting `Import-Module -Name AeriesApi` at the top of the script file(s)
 4.	Check out the [Examples](Examples) folder to see how to get started!
 
 # Build and Test
 This module has been tested on both PowerShell 5.1 as well as PowerShell Core 7.1.3
-The build process is practically non-existent, simply import the [AeriesApi.psm1](AeriesApi/AeriesApi.psm1) file with `Import-Module -Name ".\AeriesApi\AeriesApi.psm1" -Force`
+The build process is practically non-existent, simply import the [AeriesApi.psm1](AeriesApi/AeriesApi.psm1) file with `Import-Module -Name ".\AeriesApi\AeriesApi.psm1" -Force` or install the module from PSGallery with `Install-Module "AeriesApi"`
 
 # Contribute [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 Contributions are happily welcome and will undergo testing before being committed into the main branch.
