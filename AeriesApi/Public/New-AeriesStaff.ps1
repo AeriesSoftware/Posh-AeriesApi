@@ -1,17 +1,19 @@
-function Add-AeriesStaff
+function New-AeriesStaff
 {
     <#
         .SYNOPSIS
         Add a new Staff in Aeries
 
         .DESCRIPTION
-        The Add-AeriesStaff cmdlet is used to add a Staff in Aeries
+        The New-AeriesStaff cmdlet is used to add a Staff in Aeries
         No fields are technically required other than StaffID depending on if "auto-generate new staff IDs" is enabled
 
         .EXAMPLE
-        Add-AeriesStaff -StaffID 1 -FirstName "Aeries" -LastName "Software"
+        New-AeriesStaff -StaffID 1 -FirstName "Aeries" -LastName "Software"
         This will add a Staff to Aeries
     #>
+
+    [Alias("Add-AeriesStaff")]
 
     [CmdletBinding()]
     param (

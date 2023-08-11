@@ -1,16 +1,18 @@
-function Add-AeriesStaffAssignment
+function New-AeriesStaffAssignment
 {
     <#
         .SYNOPSIS
         Add a Staff Assignment in Aeries
 
         .DESCRIPTION
-        The Add-AeriesStaffAssignment cmdlet is used to create a Staff Assignment in Aeries
+        The New-AeriesStaffAssignment cmdlet is used to create a Staff Assignment in Aeries
 
         .EXAMPLE
-        Add-AeriesStaffAssignment -StaffID 1 -AssignmentType "classified"
+        New-AeriesStaffAssignment -StaffID 1 -AssignmentType "classified"
         This will create a Staff Assignment for Staff ID 1 with an Assignment Type of "classified" in Aeries
     #>
+
+    [Alias("Add-AeriesStaffAssignment")]
 
     [CmdletBinding()]
     param (
