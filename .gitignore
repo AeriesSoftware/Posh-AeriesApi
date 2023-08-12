@@ -2,14 +2,20 @@ test.*
 temp/*
 *.csv
 
+# VS code related
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 # VS related
    
@@ -411,15 +417,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-� 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
