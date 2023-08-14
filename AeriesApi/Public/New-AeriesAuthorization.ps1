@@ -1,16 +1,18 @@
-function Add-AeriesAuthorization
+function New-AeriesAuthorization
 {
     <#
         .SYNOPSIS
         Add a new Authorization in Aeries
 
         .DESCRIPTION
-        The Add-AeriesAuthorization cmdlet is used to add an Authorization in Aeries
+        The New-AeriesAuthorization cmdlet is used to add an Authorization in Aeries
 
         .EXAMPLE
-        Add-AeriesAuthorization -SchoolCode 994 -StudentID 99400001 -Comment "This was added with PowerShell"
+        New-AeriesAuthorization -SchoolCode 994 -StudentID 99400001 -Comment "This was added with PowerShell"
         This will add an Authorization to Aeries
     #>
+
+    [Alias("Add-AeriesAuthorization")]
 
     [CmdletBinding()]
     param (

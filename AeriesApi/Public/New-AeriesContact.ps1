@@ -1,16 +1,18 @@
-function Add-AeriesContact
+function New-AeriesContact
 {
     <#
         .SYNOPSIS
         Add a Contact to Aeries
 
         .DESCRIPTION
-        The Add-AeriesContact cmdlet is used to create a Contact in Aeries for a given StudentID
+        The New-AeriesContact cmdlet is used to create a Contact in Aeries for a given StudentID
 
         .EXAMPLE
-        Add-AeriesContact -StudentID 99400001 -FirstName "Aeries" -LastName "Software"
+        New-AeriesContact -StudentID 99400001 -FirstName "Aeries" -LastName "Software"
         This will create a Contact in Aeries for StudentID 99400001
     #>
+
+    [Alias("Add-AeriesContact")]
 
     [CmdletBinding()]
     param (

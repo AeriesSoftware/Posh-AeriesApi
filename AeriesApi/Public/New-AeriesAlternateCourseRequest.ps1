@@ -1,16 +1,18 @@
-function Add-AeriesAlternateCourseRequest
+function New-AeriesAlternateCourseRequest
 {
     <#
         .SYNOPSIS
         Add an Alternate Course Request to Aeries
 
         .DESCRIPTION
-        The Add-AeriesAlternateCourseRequest cmdlet is used to add an Alternate Course Request in Aeries for a given StudentID and SchoolCode 
+        The New-AeriesAlternateCourseRequest cmdlet is used to add an Alternate Course Request in Aeries for a given StudentID and SchoolCode 
 
         .EXAMPLE
-        Add-AeriesAlternateCourseRequest -SchoolCode 994 -StudentID 99400001 -CourseNumber "123456"
+        New-AeriesAlternateCourseRequest -SchoolCode 994 -StudentID 99400001 -CourseNumber "123456"
         This will create an Alternate Course Request in Aeries for StudentID 99400001 at SchoolCode 994 with Course Number 123456
     #>
+
+    [Alias("Add-AeriesAlternateCourseRequest")]
 
     [CmdletBinding()]
     param (

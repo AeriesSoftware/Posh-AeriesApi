@@ -1,16 +1,18 @@
-function Add-AeriesSchedulingSection
+function New-AeriesSchedulingSection
 {
     <#
         .SYNOPSIS
         Add a Scheduling Section to Aeries
 
         .DESCRIPTION
-        The Add-AeriesSchedulingSection cmdlet is used to create a Scheduling Section in Aeries for the given SchoolCode
+        The New-AeriesSchedulingSection cmdlet is used to create a Scheduling Section in Aeries for the given SchoolCode
 
         .EXAMPLE
-        Add-AeriesSchedulingSection -SchoolCode 884
+        New-AeriesSchedulingSection -SchoolCode 884 -Semester "F"
         This will create a Schedule Section in Aeries for SchoolCode 884
     #>
+
+    [Alias("Add-AeriesSchedulingSection")]
 
     [CmdletBinding()]
     param (
