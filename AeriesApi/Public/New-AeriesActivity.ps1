@@ -1,16 +1,17 @@
-function Add-AeriesActivity
+function New-AeriesActivity
 {
     <#
         .SYNOPSIS
         Add an Activity/Award to Aeries
 
         .DESCRIPTION
-        The Add-AeriesActivity cmdlet is used to create an Activity/Award in Aeries for a given StudentID at the SchoolCode
+        The New-AeriesActivity cmdlet is used to create an Activity/Award in Aeries for a given StudentID at the SchoolCode
 
         .EXAMPLE
-        Add-AeriesActivity -SchoolCode 994 -StudentID 99400001 -TypeCode "1" -DateEntered "2021-10-26" -Comment "This was added via PowerShell!"
+        New-AeriesActivity -SchoolCode 994 -StudentID 99400001 -TypeCode "1" -DateEntered "2021-10-26" -Comment "This was added via PowerShell!"
         This will create an Activity in Aeries for StudentID 99400001 at SchoolCode 994
     #>
+    [Alias("Add-AeriesActivity")]
 
     [CmdletBinding()]
     param (

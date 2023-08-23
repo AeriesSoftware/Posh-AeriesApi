@@ -1,16 +1,18 @@
-function Add-AeriesGradebookAssignment
+function New-AeriesGradebookAssignment
 {
     <#
         .SYNOPSIS
         Add a new Gradbook Assignment in Aeries
 
         .DESCRIPTION
-        The Add-AeriesGradebookAssignment cmdlet is used to add a Gradebook Assignment in Aeries
+        The New-AeriesGradebookAssignment cmdlet is used to add a Gradebook Assignment in Aeries
 
         .EXAMPLE
-        Add-AeriesGradebookAssignment -GradebookNumber 123456 -Description "Assignment created from PowerShell"
+        New-AeriesGradebookAssignment -GradebookNumber 123456 -Description "Assignment created from PowerShell"
         This will add a Gradebook Assignment to Aeries
     #>
+
+    [Alias("Add-AeriesGradebookAssignment")]
 
     [CmdletBinding()]
     param (

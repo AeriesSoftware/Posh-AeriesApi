@@ -1,17 +1,19 @@
-function Add-AeriesStudent
+function New-AeriesStudent
 {
     <#
         .SYNOPSIS
         Add a new Student in Aeries
 
         .DESCRIPTION
-        The Add-AeriesStudent cmdlet is used to add a Student for a specific School in Aeries
+        The New-AeriesStudent cmdlet is used to add a Student for a specific School in Aeries
         No fields are technically required other than SchoolCode, but the more you provide the more accurate it will be immediately
 
         .EXAMPLE
-        Add-AeriesStudent -SchoolCode 994 -FirstName "Aeries" -LastName "Software"
+        New-AeriesStudent -SchoolCode 994 -FirstName "Aeries" -LastName "Software"
         This will add a student to the specific School Code in Aeries
     #>
+
+    [Alias("Add-AeriesStudent")]
 
     [CmdletBinding()]
     param (

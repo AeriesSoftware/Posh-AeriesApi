@@ -551,7 +551,7 @@ Edit-AeriesAddress [-StudentID] <Int32> [-UpdateType] <String> [[-EffectiveStart
 | - | - | - | - | - | - |
 | <nobr>StudentID</nobr> |  |  | true | false | 0 |
 | <nobr>UpdateType</nobr> |  |  | true | false |  |
-| <nobr>EffectiveStartDate</nobr> |  |  | false | false | \\(Get-Date\\) |
+| <nobr>EffectiveStartDate</nobr> |  |  | false | false | \(Get-Date\) |
 | <nobr>MailingAddress</nobr> |  |  | false | false |  |
 | <nobr>MailingAddressCity</nobr> |  |  | false | false |  |
 | <nobr>MailingAddressState</nobr> |  |  | false | false |  |
@@ -1330,7 +1330,7 @@ Get-AeriesAttendanceHistoryCodes [-SchoolCode] <Int16> [[-StartYear] <Int32>] [<
 | Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
-| <nobr>StartYear</nobr> |  | Start Year \\(Will format to be Academic Year of YYYY-YYYY\\) | false | false | 0 |
+| <nobr>StartYear</nobr> |  | Start Year \(Will format to be Academic Year of YYYY-YYYY\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -1363,7 +1363,7 @@ Get-AeriesAttendanceHistoryDetail [-SchoolCode] <Int16> [[-StudentID] <Int32>] [
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartYear</nobr> |  | Start Year \\(Will format to be Academic Year of YYYY-YYYY\\) | false | false | 0 |
+| <nobr>StartYear</nobr> |  | Start Year \(Will format to be Academic Year of YYYY-YYYY\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -1403,7 +1403,7 @@ Get-AeriesAttendanceHistorySummary [-SchoolCode] <Int16> [[-StudentID] <Int32>] 
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartYear</nobr> |  | Start Year \\(Will format to be Academic Year of YYYY-YYYY\\) | false | false | 0 |
+| <nobr>StartYear</nobr> |  | Start Year \(Will format to be Academic Year of YYYY-YYYY\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -1516,7 +1516,7 @@ Get-AeriesClassCalendar [-SchoolCode] <Int16> [[-Sequence] <Int16>] [-GetDates] 
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>Sequence</nobr> |  |  | false | false | 0 |
 | <nobr>GetDates</nobr> |  | Switch for pulling Dates for a Class Calendar | false | false | False |
-| <nobr>StartYear</nobr> |  | Start Year \\(Will format to be Academic Year of YYYY-YYYY\\) | false | false | 0 |
+| <nobr>StartYear</nobr> |  | Start Year \(Will format to be Academic Year of YYYY-YYYY\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -1794,7 +1794,7 @@ Get-AeriesFlexPeriod [-SchoolCode] <Int16> [[-Sequence] <Int16>] [[-StartYear] <
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>Sequence</nobr> |  |  | false | false | 0 |
-| <nobr>StartYear</nobr> |  | Start Year \\(Will format to be Academic Year of YYYY-YYYY\\) | false | false | 0 |
+| <nobr>StartYear</nobr> |  | Start Year \(Will format to be Academic Year of YYYY-YYYY\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2453,8 +2453,8 @@ Get-AeriesStudent [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-StudentNumber]
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
 | <nobr>StudentNumber</nobr> |  |  | false | false | 0 |
 | <nobr>Grade</nobr> |  |  | false | false |  |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2487,8 +2487,8 @@ Get-AeriesStudentAttendance [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-Star
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartDate</nobr> |  | The earliest date of attendance to include \\(inclusive\\) | false | false |  |
-| <nobr>EndDate</nobr> |  | The latest date of attendance to include \\(inclusive\\) | false | false |  |
+| <nobr>StartDate</nobr> |  | The earliest date of attendance to include \(inclusive\) | false | false |  |
+| <nobr>EndDate</nobr> |  | The latest date of attendance to include \(inclusive\) | false | false |  |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2610,7 +2610,7 @@ Get-AeriesStudentEnrollmentHistory [[-SchoolCode] <Int16>] [[-StudentID] <Int32>
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | false | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>AcademicYear</nobr> |  | Academic year \\(2017 for 2017-2018\\) | false | false |  |
+| <nobr>AcademicYear</nobr> |  | Academic year \(2017 for 2017-2018\) | false | false |  |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2673,8 +2673,8 @@ Get-AeriesStudentExtended [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-Studen
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
 | <nobr>StudentNumber</nobr> |  |  | false | false | 0 |
 | <nobr>Grade</nobr> |  |  | false | false |  |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2707,8 +2707,8 @@ Get-AeriesStudentGPA [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-StartingRec
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2742,8 +2742,8 @@ Get-AeriesStudentGraduationStatus [-SchoolCode] <Int16> [[-StudentID] <Int32>] [
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
 | <nobr>Grade</nobr> |  |  | false | false |  |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2800,8 +2800,8 @@ Get-AeriesStudentPicture [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-Startin
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -2923,8 +2923,8 @@ Get-AeriesStudentTranscript [-SchoolCode] <Int16> [[-StudentID] <Int32>] [[-Star
 | - | - | - | - | - | - |
 | <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
 | <nobr>StudentID</nobr> |  |  | false | false | 0 |
-| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \\(inclusive\\) | false | false | 0 |
-| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \\(inclusive\\) | false | false | 0 |
+| <nobr>StartingRecord</nobr> |  | The Record-Count value of the first record to return \(inclusive\) | false | false | 0 |
+| <nobr>EndingRecord</nobr> |  | The Record-Count value of the last record to return \(inclusive\) | false | false | 0 |
 ### Examples
 **EXAMPLE 1**
 ```powershell
@@ -3016,7 +3016,7 @@ Initialize-AeriesApi [-URL] <String> [-Certificate] <String> [[-DatabaseYear] <S
 | Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
 | - | - | - | - | - | - |
 | <nobr>URL</nobr> |  | Base URL for Aeries API | true | false |  |
-| <nobr>Certificate</nobr> |  | The certificate to perform the requests | true | true \\(ByValue\\) |  |
+| <nobr>Certificate</nobr> |  | The certificate to perform the requests | true | true \(ByValue\) |  |
 | <nobr>DatabaseYear</nobr> |  | The DatabaseYear to utilize If provided, must be 4 characters | false | false |  |
 | <nobr>UserAgent</nobr> |  | User Agent to use for Requests | false | false | PowerShell AeriesApi Module |
 ### Examples
@@ -3073,6 +3073,531 @@ Initialize-AeriesPreEnrollInactive [-SchoolCode] <Int16> [[-StudentID] <Int32>] 
 ```powershell
 Initialize-AeriesPreEnrollInactive -SchoolCode 994 -StudentID 99400001
 This will initialize a Pre Enrollment for the given Student ID in Aeries
+```
+
+
+## New-AeriesActivity
+### Synopsis
+Add an Activity/Award to Aeries
+### Syntax
+```powershell
+
+New-AeriesActivity [-SchoolCode] <Int16> [-StudentID] <Int32> [[-DateEntered] <DateTime>] [[-TypeCode] <String>] [[-ActivityOrAwardCode] <String>] [[-Name] <String>] [[-StartDate] <DateTime>] [[-EndDate] <DateTime>] [[-Hours] <Decimal>] [[-ReasonCode] <String>] [[-SeasonCode] <String>] [[-StatusCode] <String>] [[-TransportationDate] <DateTime>] [[-TransportationStatusCode] <String>] [[-CareerPathwayCode] <String>] [[-Comment] <String>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesActivity Aliases
+ - Add-AeriesActivity
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>StudentID</nobr> |  |  | true | false | 0 |
+| <nobr>DateEntered</nobr> |  |  | false | false |  |
+| <nobr>TypeCode</nobr> |  |  | false | false |  |
+| <nobr>ActivityOrAwardCode</nobr> |  |  | false | false |  |
+| <nobr>Name</nobr> |  |  | false | false |  |
+| <nobr>StartDate</nobr> |  |  | false | false |  |
+| <nobr>EndDate</nobr> |  |  | false | false |  |
+| <nobr>Hours</nobr> |  |  | false | false | -1 |
+| <nobr>ReasonCode</nobr> |  |  | false | false |  |
+| <nobr>SeasonCode</nobr> |  |  | false | false |  |
+| <nobr>StatusCode</nobr> |  |  | false | false |  |
+| <nobr>TransportationDate</nobr> |  |  | false | false |  |
+| <nobr>TransportationStatusCode</nobr> |  |  | false | false |  |
+| <nobr>CareerPathwayCode</nobr> |  |  | false | false |  |
+| <nobr>Comment</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesActivity -SchoolCode 994 -StudentID 99400001 -TypeCode "1" -DateEntered "2021-10-26" -Comment "This was added via PowerShell!"
+This will create an Activity in Aeries for StudentID 99400001 at SchoolCode 994
+```
+
+
+## New-AeriesAlternateCourseRequest
+### Synopsis
+Add an Alternate Course Request to Aeries
+### Syntax
+```powershell
+
+New-AeriesAlternateCourseRequest [-SchoolCode] <Int16> [-StudentID] <Int32> [-CourseNumber] <String> [[-RelativePrioritySortOrder] <Int32>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesAlternateCourseRequest Aliases
+ - Add-AeriesAlternateCourseRequest
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>StudentID</nobr> |  |  | true | false | 0 |
+| <nobr>CourseNumber</nobr> |  |  | true | false |  |
+| <nobr>RelativePrioritySortOrder</nobr> |  |  | false | false | -1 |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesAlternateCourseRequest -SchoolCode 994 -StudentID 99400001 -CourseNumber "123456"
+This will create an Alternate Course Request in Aeries for StudentID 99400001 at SchoolCode 994 with Course Number 123456
+```
+
+
+## New-AeriesAuthorization
+### Synopsis
+Add a new Authorization in Aeries
+### Syntax
+```powershell
+
+New-AeriesAuthorization [-SchoolCode] <Int16> [-StudentID] <Int32> [[-DateEntered] <DateTime>] [[-TypeCode] <String>] [[-MiscCode] <String>] [[-StatusCode] <String>] [[-StatusDate] <DateTime>] [[-EffectiveEndDate] <DateTime>] [[-Comment] <String>] [[-TestAdministration] <String>] [[-Source] <String>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesAuthorization Aliases
+ - Add-AeriesAuthorization
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>StudentID</nobr> |  |  | true | false | 0 |
+| <nobr>DateEntered</nobr> |  |  | false | false |  |
+| <nobr>TypeCode</nobr> |  |  | false | false |  |
+| <nobr>MiscCode</nobr> |  |  | false | false |  |
+| <nobr>StatusCode</nobr> |  |  | false | false |  |
+| <nobr>StatusDate</nobr> |  |  | false | false |  |
+| <nobr>EffectiveEndDate</nobr> |  |  | false | false |  |
+| <nobr>Comment</nobr> |  |  | false | false |  |
+| <nobr>TestAdministration</nobr> |  |  | false | false |  |
+| <nobr>Source</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesAuthorization -SchoolCode 994 -StudentID 99400001 -Comment "This was added with PowerShell"
+This will add an Authorization to Aeries
+```
+
+
+## New-AeriesContact
+### Synopsis
+Add a Contact to Aeries
+### Syntax
+```powershell
+
+New-AeriesContact [-StudentID] <Int32> [[-MailingName] <String>] [[-NamePrefix] <String>] [[-FirstName] <String>] [[-LastName] <String>] [[-MiddleName] <String>] [[-NameSuffix] <String>] [[-Address] <String>] [[-AddressCity] <String>] [[-AddressState] <String>] [[-AddressZip] <String>] [[-AddressZipExt] <String>] [[-RelationshipToStudentCode] <String>] [[-HomePhone] <String>] [[-WorkPhone] <String>] [[-WorkPhoneExt] <String>] [[-CellPhone] <String>] [[-EmailAddress] <String>] [[-ContactOrder] <Int32>] [[-MiscCode] <String>] [[-PrimaryContact] <Boolean>] [[-MailTagCode] <String>] [[-AccessToPortal] <Boolean>] [[-LivesWithStudentIndicator] <Boolean>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesContact Aliases
+ - Add-AeriesContact
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>StudentID</nobr> |  |  | true | false | 0 |
+| <nobr>MailingName</nobr> |  |  | false | false |  |
+| <nobr>NamePrefix</nobr> |  |  | false | false |  |
+| <nobr>FirstName</nobr> |  |  | false | false |  |
+| <nobr>LastName</nobr> |  |  | false | false |  |
+| <nobr>MiddleName</nobr> |  |  | false | false |  |
+| <nobr>NameSuffix</nobr> |  |  | false | false |  |
+| <nobr>Address</nobr> |  |  | false | false |  |
+| <nobr>AddressCity</nobr> |  |  | false | false |  |
+| <nobr>AddressState</nobr> |  |  | false | false |  |
+| <nobr>AddressZip</nobr> |  |  | false | false |  |
+| <nobr>AddressZipExt</nobr> |  |  | false | false |  |
+| <nobr>RelationshipToStudentCode</nobr> |  |  | false | false |  |
+| <nobr>HomePhone</nobr> |  |  | false | false |  |
+| <nobr>WorkPhone</nobr> |  |  | false | false |  |
+| <nobr>WorkPhoneExt</nobr> |  |  | false | false |  |
+| <nobr>CellPhone</nobr> |  |  | false | false |  |
+| <nobr>EmailAddress</nobr> |  |  | false | false |  |
+| <nobr>ContactOrder</nobr> |  |  | false | false | -1 |
+| <nobr>MiscCode</nobr> |  |  | false | false |  |
+| <nobr>PrimaryContact</nobr> |  |  | false | false | False |
+| <nobr>MailTagCode</nobr> |  |  | false | false |  |
+| <nobr>AccessToPortal</nobr> |  |  | false | false | False |
+| <nobr>LivesWithStudentIndicator</nobr> |  |  | false | false | False |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesContact -StudentID 99400001 -FirstName "Aeries" -LastName "Software"
+This will create a Contact in Aeries for StudentID 99400001
+```
+
+
+## New-AeriesCourseRequest
+### Synopsis
+Add a Course Request to Aeries
+### Syntax
+```powershell
+
+New-AeriesCourseRequest [-SchoolCode] <Int16> [-StudentID] <Int32> [[-SectionNumber] <Int16>] [-CourseNumber] <String> [[-PreferredTeacherNumber] <Int16>] [[-PreferredStaffID] <Int32>] [[-RejectCode] <String>] [[-AlternateTag] <String>] [[-ActualPrimaryCourseID] <String>] [[-PermanentLockCode] <String>] [[-AlternateCourseRequestReferences] <Int16[]>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesCourseRequest Aliases
+ - Add-AeriesCourseRequest
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>StudentID</nobr> |  |  | true | false | 0 |
+| <nobr>SectionNumber</nobr> |  |  | false | false | -1 |
+| <nobr>CourseNumber</nobr> |  |  | true | false |  |
+| <nobr>PreferredTeacherNumber</nobr> |  |  | false | false | -1 |
+| <nobr>PreferredStaffID</nobr> |  |  | false | false | -1 |
+| <nobr>RejectCode</nobr> |  |  | false | false |  |
+| <nobr>AlternateTag</nobr> |  |  | false | false |  |
+| <nobr>ActualPrimaryCourseID</nobr> |  |  | false | false |  |
+| <nobr>PermanentLockCode</nobr> |  |  | false | false |  |
+| <nobr>AlternateCourseRequestReferences</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesCourseRequest -SchoolCode 994 -StudentID 99400001 -CourseNumber "123456"
+This will create a Course Request in Aeries for StudentID 99400001 at SchoolCode 994 with Course Number 123456
+```
+
+
+## New-AeriesGradebookAssignment
+### Synopsis
+Add a new Gradbook Assignment in Aeries
+### Syntax
+```powershell
+
+New-AeriesGradebookAssignment [-GradebookNumber] <Int32> [-Description] <String> [[-AssignmentCategoryCode] <String>] [[-DateAssigned] <DateTime>] [[-DateDue] <DateTime>] [[-NumberCorrectPossible] <Decimal>] [[-PointsPossible] <Decimal>] [[-Comment] <String>] [[-FormativeSummativeIndicator] <String>] [[-RubricAssignment] <Boolean>] [[-ExternalID] <String>] [[-CreateInLinkedGradebooksToo] <Boolean>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesGradebookAssignment Aliases
+ - Add-AeriesGradebookAssignment
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>GradebookNumber</nobr> |  |  | true | false | 0 |
+| <nobr>Description</nobr> |  |  | true | false |  |
+| <nobr>AssignmentCategoryCode</nobr> |  |  | false | false |  |
+| <nobr>DateAssigned</nobr> |  |  | false | false |  |
+| <nobr>DateDue</nobr> |  |  | false | false |  |
+| <nobr>NumberCorrectPossible</nobr> |  |  | false | false | -1 |
+| <nobr>PointsPossible</nobr> |  |  | false | false | -1 |
+| <nobr>Comment</nobr> |  |  | false | false |  |
+| <nobr>FormativeSummativeIndicator</nobr> |  |  | false | false |  |
+| <nobr>RubricAssignment</nobr> |  |  | false | false | False |
+| <nobr>ExternalID</nobr> |  |  | false | false |  |
+| <nobr>CreateInLinkedGradebooksToo</nobr> |  |  | false | false | True |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesGradebookAssignment -GradebookNumber 123456 -Description "Assignment created from PowerShell"
+This will add a Gradebook Assignment to Aeries
+```
+
+
+## New-AeriesSchedulingSection
+### Synopsis
+Add a Scheduling Section to Aeries
+### Syntax
+```powershell
+
+New-AeriesSchedulingSection [-SchoolCode] <Int16> [[-SectionNumber] <Int16>] [[-Period] <Int16>] [[-FlexPeriodSequenceNumber] <Int32>] [[-PeriodBlock] <Int16>] [-Semester] <String> [[-SplitTerm] <String>] [[-ClassCalendarSequenceNumber] <Int32>] [-CourseID] <String> [[-TeacherNumber1] <Int16>] [[-TeacherNumber2] <Int16>] [[-TeacherNumber3] <Int16>] [[-HighlyQualifiedStatusCode1] <String>] [[-HighlyQualifiedStatusCode2] <String>] [[-HighlyQualifiedStatusCode3] <String>] [[-Room] <String>] [[-Credit] <Decimal>] [[-GenderRestriction] <String>] [[-LowGrade] <Int16>] [[-HighGrade] <Int16>] [[-MaxStudents] <Int16>] [[-InactiveStatusCode] <String>] [[-ProgramCode] <String>] [[-HourlyAttendanceProgramCode] <String>] [[-ExclusionCode] <String>] [[-CountsForADA] <String>] [[-MultiTeacherCode] <String>] [[-SchedulingGroup] <String>] [[-TeamCourseGroup] <String>] [[-TeamNumber] <Int32>] [[-SemesterGroup] <String>] [[-Track] <String>] [[-ClassID] <Int32>] [[-EducationServiceCode] <String>] [[-LanguageOfInstructionCode] <String>] [[-InstructionalStrategyCode] <String>] [[-FundingSourceCode] <String>] [[-CareerTechnicalEducationProviderCode] <String>] [[-IndependentStudyIndicator] <String>] [[-DistanceLearningIndicator] <String>] [[-ItinerantTeacherIndicator] <String>] [-UseSupplementalAttendance] [[-PopulationServedCode] <String>] [[-ClassTypeCode] <String>] [[-MonthlyMinutes] <Int16>] [[-UserCode1] <String>] [[-UserCode2] <String>] [[-UserCode3] <String>] [[-UserCode4] <String>] [[-UserCode5] <String>] [[-UserCode6] <String>] [[-UserCode7] <String>] [[-UserCode8] <String>] [[-ArticulatedCourseIndicator] <String>] [[-NonCampusBasedInstructionCode] <String>] [[-PreKSchoolTypeCode] <String>] [[-PreKCurriculaCode] <String>] [-IsHighQualityPreKProgram] [[-InstructionTypeCode] <String>] [[-ProgramEvaluationTypeCode] <String>] [[-EducationalEnvironmentCode] <String>] [[-CareerTechnicalEducationHours] <Int16>] [[-ContentSubcategoryCode] <String>] [[-CharterNonCoreIndicator] <String>] [[-AdvancedCourseStateCode] <String>] [[-OnlineInstructionTypeCode] <String>] [[-MiddleSchoolCoreIndicator] <String>] [[-NonCredentialedAuthorizationCode] <String>] [[-HighQualityCareerTechnicalEducationIndicator] <String>] [[-ArenaSchedulingIndicator] <String>] [-ExcludeFromScheduler] [[-SectionStaffMembers] <SectionStaffMember[]>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesSchedulingSection Aliases
+ - Add-AeriesSchedulingSection
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>SectionNumber</nobr> |  |  | false | false | 0 |
+| <nobr>Period</nobr> |  |  | false | false | -1 |
+| <nobr>FlexPeriodSequenceNumber</nobr> |  |  | false | false | 0 |
+| <nobr>PeriodBlock</nobr> |  |  | false | false | 0 |
+| <nobr>Semester</nobr> |  |  | true | false |  |
+| <nobr>SplitTerm</nobr> |  | If the value is blank, accept it. Might be section staff If is in valid set, accept it If value is 6 or less characters, accept it | false | false |  |
+| <nobr>ClassCalendarSequenceNumber</nobr> |  |  | false | false | 0 |
+| <nobr>CourseID</nobr> |  |  | true | false |  |
+| <nobr>TeacherNumber1</nobr> |  |  | false | false | 0 |
+| <nobr>TeacherNumber2</nobr> |  |  | false | false | -1 |
+| <nobr>TeacherNumber3</nobr> |  |  | false | false | -1 |
+| <nobr>HighlyQualifiedStatusCode1</nobr> |  |  | false | false |  |
+| <nobr>HighlyQualifiedStatusCode2</nobr> |  |  | false | false |  |
+| <nobr>HighlyQualifiedStatusCode3</nobr> |  |  | false | false |  |
+| <nobr>Room</nobr> |  |  | false | false |  |
+| <nobr>Credit</nobr> |  |  | false | false | 0 |
+| <nobr>GenderRestriction</nobr> |  |  | false | false |  |
+| <nobr>LowGrade</nobr> |  |  | false | false | -99 |
+| <nobr>HighGrade</nobr> |  | -99 because technically -1 that I usually use is a valid grade | false | false | -99 |
+| <nobr>MaxStudents</nobr> |  | -99 because technically -1 that I usually use is a valid grade | false | false | 0 |
+| <nobr>InactiveStatusCode</nobr> |  |  | false | false |  |
+| <nobr>ProgramCode</nobr> |  |  | false | false |  |
+| <nobr>HourlyAttendanceProgramCode</nobr> |  |  | false | false |  |
+| <nobr>ExclusionCode</nobr> |  |  | false | false |  |
+| <nobr>CountsForADA</nobr> |  |  | false | false |  |
+| <nobr>MultiTeacherCode</nobr> |  |  | false | false |  |
+| <nobr>SchedulingGroup</nobr> |  |  | false | false |  |
+| <nobr>TeamCourseGroup</nobr> |  |  | false | false |  |
+| <nobr>TeamNumber</nobr> |  |  | false | false | 0 |
+| <nobr>SemesterGroup</nobr> |  |  | false | false |  |
+| <nobr>Track</nobr> |  |  | false | false |  |
+| <nobr>ClassID</nobr> |  |  | false | false | 0 |
+| <nobr>EducationServiceCode</nobr> |  |  | false | false |  |
+| <nobr>LanguageOfInstructionCode</nobr> |  |  | false | false |  |
+| <nobr>InstructionalStrategyCode</nobr> |  |  | false | false |  |
+| <nobr>FundingSourceCode</nobr> |  |  | false | false |  |
+| <nobr>CareerTechnicalEducationProviderCode</nobr> |  |  | false | false |  |
+| <nobr>IndependentStudyIndicator</nobr> |  |  | false | false |  |
+| <nobr>DistanceLearningIndicator</nobr> |  |  | false | false |  |
+| <nobr>ItinerantTeacherIndicator</nobr> |  |  | false | false |  |
+| <nobr>UseSupplementalAttendance</nobr> |  |  | false | false | False |
+| <nobr>PopulationServedCode</nobr> |  |  | false | false |  |
+| <nobr>ClassTypeCode</nobr> |  |  | false | false |  |
+| <nobr>MonthlyMinutes</nobr> |  |  | false | false | 0 |
+| <nobr>UserCode1</nobr> |  |  | false | false |  |
+| <nobr>UserCode2</nobr> |  |  | false | false |  |
+| <nobr>UserCode3</nobr> |  |  | false | false |  |
+| <nobr>UserCode4</nobr> |  |  | false | false |  |
+| <nobr>UserCode5</nobr> |  |  | false | false |  |
+| <nobr>UserCode6</nobr> |  |  | false | false |  |
+| <nobr>UserCode7</nobr> |  |  | false | false |  |
+| <nobr>UserCode8</nobr> |  |  | false | false |  |
+| <nobr>ArticulatedCourseIndicator</nobr> |  |  | false | false |  |
+| <nobr>NonCampusBasedInstructionCode</nobr> |  |  | false | false |  |
+| <nobr>PreKSchoolTypeCode</nobr> |  |  | false | false |  |
+| <nobr>PreKCurriculaCode</nobr> |  |  | false | false |  |
+| <nobr>IsHighQualityPreKProgram</nobr> |  |  | false | false | False |
+| <nobr>InstructionTypeCode</nobr> |  |  | false | false |  |
+| <nobr>ProgramEvaluationTypeCode</nobr> |  |  | false | false |  |
+| <nobr>EducationalEnvironmentCode</nobr> |  |  | false | false |  |
+| <nobr>CareerTechnicalEducationHours</nobr> |  |  | false | false | 0 |
+| <nobr>ContentSubcategoryCode</nobr> |  |  | false | false |  |
+| <nobr>CharterNonCoreIndicator</nobr> |  |  | false | false |  |
+| <nobr>AdvancedCourseStateCode</nobr> |  |  | false | false |  |
+| <nobr>OnlineInstructionTypeCode</nobr> |  |  | false | false |  |
+| <nobr>MiddleSchoolCoreIndicator</nobr> |  |  | false | false |  |
+| <nobr>NonCredentialedAuthorizationCode</nobr> |  |  | false | false |  |
+| <nobr>HighQualityCareerTechnicalEducationIndicator</nobr> |  |  | false | false |  |
+| <nobr>ArenaSchedulingIndicator</nobr> |  |  | false | false |  |
+| <nobr>ExcludeFromScheduler</nobr> |  |  | false | false | False |
+| <nobr>SectionStaffMembers</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesSchedulingSection -SchoolCode 884 -Semester "F"
+This will create a Schedule Section in Aeries for SchoolCode 884
+```
+
+
+## New-AeriesStaff
+### Synopsis
+Add a new Staff in Aeries
+### Syntax
+```powershell
+
+New-AeriesStaff [[-StaffID] <Int32>] [[-FirstName] <String>] [[-LastName] <String>] [[-MiddleName] <String>] [[-BirthYear] <Int16>] [[-BirthDate] <DateTime>] [[-FullTimePercentage] <Int16>] [[-HireDate] <DateTime>] [[-LeaveDate] <DateTime>] [[-InactiveStatusCode] <String>] [[-StateEducatorID] <String>] [[-EmailAddress] <String>] [[-PrimaryAeriesSchool] <Int16>] [[-NetworkLoginID] <String>] [[-AlternateEmailAddress] <String>] [[-HumanResourcesSystemID] <String>] [[-CellPhone] <String>] [[-Title] <String>] [[-Gender] <String>] [[-EducationLevelCode] <String>] [[-EthnicityCode] <String>] [[-RaceCode1] <String>] [[-RaceCode2] <String>] [[-RaceCode3] <String>] [[-RaceCode4] <String>] [[-RaceCode5] <String>] [[-PositionStatusCode] <String>] [[-TotalYearsOfEduService] <Int16>] [[-TotalYearsInThisDistrict] <Int16>] [[-PreviousLastName] <String>] [[-PreviousFirstName] <String>] [[-PreviousMiddleName] <String>] [[-NameSuffix] <String>] [[-Address] <String>] [[-AddressCity] <String>] [[-AddressState] <String>] [[-AddressZipCode] <String>] [[-AddressZipExt] <String>] [[-HomePhone] <String>] [[-EmergencyContactName] <String>] [[-EmergencyContactPhone] <String>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesStaff Aliases
+ - Add-AeriesStaff
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>StaffID</nobr> |  |  | false | false | -1 |
+| <nobr>FirstName</nobr> |  |  | false | false |  |
+| <nobr>LastName</nobr> |  |  | false | false |  |
+| <nobr>MiddleName</nobr> |  |  | false | false |  |
+| <nobr>BirthYear</nobr> |  |  | false | false | -1 |
+| <nobr>BirthDate</nobr> |  |  | false | false |  |
+| <nobr>FullTimePercentage</nobr> |  |  | false | false | -1 |
+| <nobr>HireDate</nobr> |  |  | false | false |  |
+| <nobr>LeaveDate</nobr> |  |  | false | false |  |
+| <nobr>InactiveStatusCode</nobr> |  |  | false | false |  |
+| <nobr>StateEducatorID</nobr> |  |  | false | false |  |
+| <nobr>EmailAddress</nobr> |  |  | false | false |  |
+| <nobr>PrimaryAeriesSchool</nobr> |  |  | false | false | -1 |
+| <nobr>NetworkLoginID</nobr> |  |  | false | false |  |
+| <nobr>AlternateEmailAddress</nobr> |  |  | false | false |  |
+| <nobr>HumanResourcesSystemID</nobr> |  |  | false | false |  |
+| <nobr>CellPhone</nobr> |  |  | false | false |  |
+| <nobr>Title</nobr> |  |  | false | false |  |
+| <nobr>Gender</nobr> |  |  | false | false |  |
+| <nobr>EducationLevelCode</nobr> |  |  | false | false |  |
+| <nobr>EthnicityCode</nobr> |  |  | false | false |  |
+| <nobr>RaceCode1</nobr> |  |  | false | false |  |
+| <nobr>RaceCode2</nobr> |  |  | false | false |  |
+| <nobr>RaceCode3</nobr> |  |  | false | false |  |
+| <nobr>RaceCode4</nobr> |  |  | false | false |  |
+| <nobr>RaceCode5</nobr> |  |  | false | false |  |
+| <nobr>PositionStatusCode</nobr> |  |  | false | false |  |
+| <nobr>TotalYearsOfEduService</nobr> |  |  | false | false | -1 |
+| <nobr>TotalYearsInThisDistrict</nobr> |  |  | false | false | -1 |
+| <nobr>PreviousLastName</nobr> |  |  | false | false |  |
+| <nobr>PreviousFirstName</nobr> |  |  | false | false |  |
+| <nobr>PreviousMiddleName</nobr> |  |  | false | false |  |
+| <nobr>NameSuffix</nobr> |  |  | false | false |  |
+| <nobr>Address</nobr> |  |  | false | false |  |
+| <nobr>AddressCity</nobr> |  |  | false | false |  |
+| <nobr>AddressState</nobr> |  |  | false | false |  |
+| <nobr>AddressZipCode</nobr> |  |  | false | false |  |
+| <nobr>AddressZipExt</nobr> |  |  | false | false |  |
+| <nobr>HomePhone</nobr> |  |  | false | false |  |
+| <nobr>EmergencyContactName</nobr> |  |  | false | false |  |
+| <nobr>EmergencyContactPhone</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesStaff -StaffID 1 -FirstName "Aeries" -LastName "Software"
+This will add a Staff to Aeries
+```
+
+
+## New-AeriesStaffAssignment
+### Synopsis
+Add a Staff Assignment in Aeries
+### Syntax
+```powershell
+
+New-AeriesStaffAssignment [-StaffID] <Int32> [-AssignmentType] <String> [[-JobClassification] <String>] [[-FullTimePercentage] <Double>] [[-NonClassroomBasedJobAssignment1] <String>] [[-NonClassroomBasedJobAssignment2] <String>] [[-NonClassroomBasedJobAssignment3] <String>] [[-NonClassroomBasedJobAssignment4] <String>] [[-NonClassroomBasedJobAssignment5] <String>] [[-NonClassroomBasedJobAssignment6] <String>] [[-NonClassroomBasedJobAssignment7] <String>] [[-SchoolCode] <Int16>] [[-StartDate] <DateTime>] [[-EndDate] <DateTime>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesStaffAssignment Aliases
+ - Add-AeriesStaffAssignment
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>StaffID</nobr> |  |  | true | false | 0 |
+| <nobr>AssignmentType</nobr> |  |  | true | false |  |
+| <nobr>JobClassification</nobr> |  | If the passed in value is blank or null, accept it Classified can have up to 3 character codes Certificated can have up to 2 character codes | false | false |  |
+| <nobr>FullTimePercentage</nobr> |  |  | false | false | -1 |
+| <nobr>NonClassroomBasedJobAssignment1</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment2</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment3</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment4</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment5</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment6</nobr> |  |  | false | false |  |
+| <nobr>NonClassroomBasedJobAssignment7</nobr> |  |  | false | false |  |
+| <nobr>SchoolCode</nobr> |  |  | false | false | -1 |
+| <nobr>StartDate</nobr> |  |  | false | false |  |
+| <nobr>EndDate</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesStaffAssignment -StaffID 1 -AssignmentType "classified"
+This will create a Staff Assignment for Staff ID 1 with an Assignment Type of "classified" in Aeries
+```
+
+
+## New-AeriesStudent
+### Synopsis
+Add a new Student in Aeries
+### Syntax
+```powershell
+
+New-AeriesStudent [-SchoolCode] <Int16> [[-LastName] <String>] [[-FirstName] <String>] [[-MiddleName] <String>] [[-NameSuffix] <String>] [[-Gender] <String>] [[-Grade] <String>] [[-NextGrade] <String>] [[-NextSchool] <Int16>] [[-BirthDate] <DateTime>] [[-InactiveStatusCode] <String>] [[-HomePhone] <String>] [[-HomeLanguageCode] <String>] [[-CorrespondanceLanguageCode] <String>] [[-LanguageFluencyCode] <String>] [[-EthnicityCode] <String>] [[-Race1Code] <String>] [[-Race2Code] <String>] [[-Race3Code] <String>] [[-Race4Code] <String>] [[-Race5Code] <String>] [[-LastSchool] <Int16>] [[-ResidenceSchool] <Int16>] [[-NextResidenceSchool] <Int16>] [[-SchoolEnterDate] <DateTime>] [[-DistrictEnterDate] <DateTime>] [[-BirthCity] <String>] [[-BirthStateCode] <String>] [[-BirthCountryCode] <String>] [[-ParentEdLevelCode] <String>] [[-ParentGuardianName] <String>] [[-MailingAddress] <String>] [[-MailingAddressCity] <String>] [[-MailingAddressState] <String>] [[-MailingAddressZipCode] <String>] [[-MailingAddressZipExt] <String>] [[-ResidenceAddress] <String>] [[-ResidenceAddressCity] <String>] [[-ResidenceAddressState] <String>] [[-ResidenceAddressZipCode] <String>] [[-ResidenceAddressZipExt] <String>] [[-HomeLanguageSurveyFirstLanguageCode] <String>] [[-HomeLanguageSurveyPrimaryLanguageCode] <String>] [[-HomeLanguageSurveyHomeLanguageCode] <String>] [[-HomeLanguageSurveyAdultLanguageCode] <String>] [[-USEnterDate] <DateTime>] [[-USSchoolEnterDate] <DateTime>] [[-UserCode1] <String>] [[-UserCode2] <String>] [[-UserCode3] <String>] [[-UserCode4] <String>] [[-UserCode5] <String>] [[-UserCode6] <String>] [[-UserCode7] <String>] [[-UserCode8] <String>] [[-UserCode9] <String>] [[-UserCode10] <String>] [[-UserCode11] <String>] [[-UserCode12] <String>] [[-UserCode13] <String>] [<CommonParameters>]
+
+
+
+
+```
+### New-AeriesStudent Aliases
+ - Add-AeriesStudent
+
+### Parameters
+| Name  | Alias  | Description | Required? | Pipeline Input | Default Value |
+| - | - | - | - | - | - |
+| <nobr>SchoolCode</nobr> |  |  | true | false | 0 |
+| <nobr>LastName</nobr> |  |  | false | false |  |
+| <nobr>FirstName</nobr> |  |  | false | false |  |
+| <nobr>MiddleName</nobr> |  |  | false | false |  |
+| <nobr>NameSuffix</nobr> |  |  | false | false |  |
+| <nobr>Gender</nobr> |  |  | false | false |  |
+| <nobr>Grade</nobr> |  |  | false | false |  |
+| <nobr>NextGrade</nobr> |  |  | false | false |  |
+| <nobr>NextSchool</nobr> |  |  | false | false | -1 |
+| <nobr>BirthDate</nobr> |  |  | false | false |  |
+| <nobr>InactiveStatusCode</nobr> |  |  | false | false |  |
+| <nobr>HomePhone</nobr> |  |  | false | false |  |
+| <nobr>HomeLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>CorrespondanceLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>LanguageFluencyCode</nobr> |  |  | false | false |  |
+| <nobr>EthnicityCode</nobr> |  |  | false | false |  |
+| <nobr>Race1Code</nobr> |  |  | false | false |  |
+| <nobr>Race2Code</nobr> |  |  | false | false |  |
+| <nobr>Race3Code</nobr> |  |  | false | false |  |
+| <nobr>Race4Code</nobr> |  |  | false | false |  |
+| <nobr>Race5Code</nobr> |  |  | false | false |  |
+| <nobr>LastSchool</nobr> |  |  | false | false | -1 |
+| <nobr>ResidenceSchool</nobr> |  |  | false | false | -1 |
+| <nobr>NextResidenceSchool</nobr> |  |  | false | false | -1 |
+| <nobr>SchoolEnterDate</nobr> |  |  | false | false |  |
+| <nobr>DistrictEnterDate</nobr> |  |  | false | false |  |
+| <nobr>BirthCity</nobr> |  |  | false | false |  |
+| <nobr>BirthStateCode</nobr> |  |  | false | false |  |
+| <nobr>BirthCountryCode</nobr> |  |  | false | false |  |
+| <nobr>ParentEdLevelCode</nobr> |  |  | false | false |  |
+| <nobr>ParentGuardianName</nobr> |  |  | false | false |  |
+| <nobr>MailingAddress</nobr> |  |  | false | false |  |
+| <nobr>MailingAddressCity</nobr> |  |  | false | false |  |
+| <nobr>MailingAddressState</nobr> |  |  | false | false |  |
+| <nobr>MailingAddressZipCode</nobr> |  |  | false | false |  |
+| <nobr>MailingAddressZipExt</nobr> |  |  | false | false |  |
+| <nobr>ResidenceAddress</nobr> |  |  | false | false |  |
+| <nobr>ResidenceAddressCity</nobr> |  |  | false | false |  |
+| <nobr>ResidenceAddressState</nobr> |  |  | false | false |  |
+| <nobr>ResidenceAddressZipCode</nobr> |  |  | false | false |  |
+| <nobr>ResidenceAddressZipExt</nobr> |  |  | false | false |  |
+| <nobr>HomeLanguageSurveyFirstLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>HomeLanguageSurveyPrimaryLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>HomeLanguageSurveyHomeLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>HomeLanguageSurveyAdultLanguageCode</nobr> |  |  | false | false |  |
+| <nobr>USEnterDate</nobr> |  |  | false | false |  |
+| <nobr>USSchoolEnterDate</nobr> |  |  | false | false |  |
+| <nobr>UserCode1</nobr> |  |  | false | false |  |
+| <nobr>UserCode2</nobr> |  |  | false | false |  |
+| <nobr>UserCode3</nobr> |  |  | false | false |  |
+| <nobr>UserCode4</nobr> |  |  | false | false |  |
+| <nobr>UserCode5</nobr> |  |  | false | false |  |
+| <nobr>UserCode6</nobr> |  |  | false | false |  |
+| <nobr>UserCode7</nobr> |  |  | false | false |  |
+| <nobr>UserCode8</nobr> |  |  | false | false |  |
+| <nobr>UserCode9</nobr> |  |  | false | false |  |
+| <nobr>UserCode10</nobr> |  |  | false | false |  |
+| <nobr>UserCode11</nobr> |  |  | false | false |  |
+| <nobr>UserCode12</nobr> |  |  | false | false |  |
+| <nobr>UserCode13</nobr> |  |  | false | false |  |
+### Examples
+**EXAMPLE 1**
+```powershell
+New-AeriesStudent -SchoolCode 994 -FirstName "Aeries" -LastName "Software"
+This will add a student to the specific School Code in Aeries
 ```
 
 
